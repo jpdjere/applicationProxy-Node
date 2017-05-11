@@ -140,17 +140,17 @@ router.get('/sendData', (req, res) => {
               console.log(" -----  wexResponse -------");
               console.log(wexResponse);
               wexResponseToCheck = JSON.parse(wexResponse);
-              console.log(" -----  wexResponseToCheck.Datos -------");
-              console.log(wexResponseToCheck.Datos);
-              console.log(" -----  wexResponseToCheck.Datos.Documentos -------");
-              console.log(wexResponseToCheck.Datos.Documentos);
-              console.log(" -----  wexResponseToCheck.Datos.Documentos.Titulo -------");
-              console.log(wexResponseToCheck.Datos.Documentos.Titulo);
-              if(wexResponseToCheck.Datos.Documentos.URL === undefined && wexResponseToCheck.Datos.Documentos.Titulo === undefined && wexResponseToCheck.Datos.Documentos.ParrafoDestacado === undefined){
-                console.log(" ");
-                console.log(" ");
-                console.log(" ");
-                console.log(" ");
+              // console.log(" -----  wexResponseToCheck.Datos -------");
+              // console.log(wexResponseToCheck.Datos);
+              // console.log(" -----  wexResponseToCheck.Datos.Documentos -------");
+              // console.log(wexResponseToCheck.Datos.Documentos);
+              // console.log(" -----  wexResponseToCheck.Datos.Documentos.URL -------");
+              // console.log(wexResponseToCheck.Datos.Documentos[0].URL);
+              // console.log(" -----  wexResponseToCheck.Datos.Documentos.Titulo -------");
+              // console.log(wexResponseToCheck.Datos.Documentos[0].Titulo);
+              // console.log(" -----  wexResponseToCheck.Datos.Documentos.ParrafoDestacado -------");
+              // console.log(wexResponseToCheck.Datos.Documentos[0].ParrafoDestacado);
+              if(wexResponseToCheck.Datos.Documentos[0].URL === "" && wexResponseToCheck.Datos.Documentos[0].Titulo === "" && wexResponseToCheck.Datos.Documentos[0].ParrafoDestacado === ""){
                 console.log(" ");
                 console.log(" ");
                 console.log(" ");
