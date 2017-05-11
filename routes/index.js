@@ -165,9 +165,10 @@ let listarDocumentos = (message,numDocs) =>{
           resolve(respuesta);
         }, function() {
           console.log("error");
-          // else block
+          reject();
         }, function() {
           // final-block
+          reject();
         });
 
       })

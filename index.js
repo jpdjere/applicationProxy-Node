@@ -4,15 +4,18 @@ var qs = require('querystring');
 var fs = require('fs');
 var express = require('express');
 var router = express.Router();
+const util = require('util')
 
 var wex = require('./routes/index');
+//Credenciales de GCBA
 var conversation = watson.conversation({
-  username: '7f4dde73-bbe7-45c7-b8fb-0ab82d76ce72',
-  password: '8sS43ajvvQmw',
+  username: '49c3fb9e-0829-48d7-a0c6-a8bdcdbaf014',
+  password: '7TU3JxLYwXSB',
   version: 'v1',
   version_date: '2016-09-20'
 });
-var workspaceID="f47b77c3-3297-4796-bf67-432dd606a07f";
+var workspaceID="09c657e9-f782-4ff8-8913-e0f23ff222a1";
+var context;
 var context;
 var json = '';
 var wexResponse = '';
@@ -122,6 +125,7 @@ router.get('/sendData', (req, res) => {
             wex.listarDocumentos(queryObjectAND,5).then((result)=>{
               console.log("wexANDResponse: ");
               console.log(result);
+              console.log(result.Datos.Documentos);
               //Parseo la respuesta para eliminar indeseados y converitr a JSON
               result = JSON.stringify(result, null, 2);
               var regex = /\\n|<td>|<\/td>|<div>|<\/div>|<font>|<\/font>|<\/p>|<p>/;
@@ -135,11 +139,26 @@ router.get('/sendData', (req, res) => {
               console.log(" ");
               console.log(" -----  wexResponse -------");
               console.log(wexResponse);
-              if(wexResponse.Datos.Documentos.length === 0){
-
+              wexResponseToCheck = JSON.parse(wexResponse);
+              console.log(" -----  wexResponseToCheck.Datos -------");
+              console.log(wexResponseToCheck.Datos);
+              console.log(" -----  wexResponseToCheck.Datos.Documentos -------");
+              console.log(wexResponseToCheck.Datos.Documentos);
+              console.log(" -----  wexResponseToCheck.Datos.Documentos.Titulo -------");
+              console.log(wexResponseToCheck.Datos.Documentos.Titulo);
+              if(wexResponseToCheck.Datos.Documentos.URL === undefined && wexResponseToCheck.Datos.Documentos.Titulo === undefined && wexResponseToCheck.Datos.Documentos.ParrafoDestacado === undefined){
+                console.log(" ");
+                console.log(" ");
+                console.log(" ");
+                console.log(" ");
+                console.log(" ");
+                console.log(" ");
+                console.log(" ");
+                console.log(" -----  NO SE ENCONTRO NADA CON AND -------");
+                console.log(" -----  Buscando con OR.............. -------");
                 wex.listarDocumentos(queryObjectOR,5).then((result)=>{
                   console.log("wexORResponse: ");
-                  console.log(result);
+                  console.log(util.inspect(result, false, null))
                   //Parseo la respuesta para eliminar indeseados y converitr a JSON
                   result = JSON.stringify(result, null, 2);
                   var regex = /\\n|<td>|<\/td>|<div>|<\/div>|<font>|<\/font>|<\/p>|<p>/;
@@ -147,10 +166,17 @@ router.get('/sendData', (req, res) => {
                   var regex = /<br>|<br >|<\/br>|<\/ br>|<br\/>/;
                   result = result.replaceAll(regex," ");
                   wexResponse = result;
-                })
+                  console.log(" ");
+                  console.log(" ");
+                  console.log(" ");
+                  console.log(" ");
+                  console.log(" -----  wexResponse AND result was replaced by OR result -------");
+                  res.send(wexResponse);
+                }).catch((e)=>console.log("Rejected OR promise: "+e.stack));
+              }else{
+                res.send(wexResponse);
               };
-              res.send(wexResponse);
-            })
+            }).catch((e)=>console.log("Rejected AND promise: "+e.stack));
 
           }
           //Si es menor a 0.6, devuelvo el mensaje de Conversation de "No entendi"
