@@ -7,14 +7,14 @@ var router = express.Router();
 const util = require('util')
 
 var wex = require('./routes/index');
-//Credenciales de GCBA
+//Credenciales de Conversation-GCBA-2
 var conversation = watson.conversation({
-  username: '49c3fb9e-0829-48d7-a0c6-a8bdcdbaf014',
-  password: '7TU3JxLYwXSB',
+  username: '1e57fec7-79fd-41b9-96d6-f35f1182423b',
+  password: 'jdTHdcSG2xbr',
   version: 'v1',
   version_date: '2016-09-20'
 });
-var workspaceID="09c657e9-f782-4ff8-8913-e0f23ff222a1";
+var workspaceID="b69e22e3-bf63-4718-b778-221abdae8823";
 var context;
 var context;
 var json = '';
@@ -62,7 +62,8 @@ router.get('/sendData', (req, res) => {
     conversation.message({
       workspace_id: workspaceID,
       input: {'text': message},
-      context: context
+      context: context,
+      alternate_intents: true
     },
     function(err, response) {
       if (err){
@@ -90,7 +91,7 @@ router.get('/sendData', (req, res) => {
           console.log("confidence is: ",response.intents[0].confidence)
 
           //Si la confidence de Conversation es mayor o igual a 0.7 devuelvo el msj de Conversation
-          if(response.intents[0].confidence >= 0.8){
+          if(response.intents[0].confidence >= 0.6){
             console.log("I'm in");
             // res.writeHead(200, {"Content-Type": "application/json"});
             json = JSON.stringify({
@@ -101,7 +102,7 @@ router.get('/sendData', (req, res) => {
             res.send(json);
           }
           //Si la confidence de Conversation es menor voy a buscar a WEX y traigo los resultados
-          else if(response.intents[0].confidence < 0.8){
+          else if(response.intents[0].confidence < 0.6){
 
             //Creo el queryObject con AND como operator
             var regex = /\.|\?|\!/;
