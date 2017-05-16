@@ -82,6 +82,12 @@ let listarDocumentos = (message,numDocs) =>{
         'v.password' : config.documentos_pwd,
         // 'query-modification-macros':'enhance-query-with-querymodifier query-modification-expansion',
         'query-modification-macros':'query-modification-expansion',
+        //boolean output-summary - If enabled, summaries will be generated for each result (based on the contents selected in the collection configuration).
+        //Summaries usually provide a better user experience and better clustering but can have a substantial I/O cost (it is therefore advised to turn this
+        // off when retrieving a large number of results).
+        //'output-summary':true,
+        // 'output-cache-references':true,
+        'output-cache-data':true,
         'extra-xml':ontolectionsXML
 
       }
@@ -143,6 +149,11 @@ let listarDocumentos = (message,numDocs) =>{
             foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'snippet' })
             tempDoc["ParrafoDestacado"] = foundArray._;
             foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'filetype' })
+            cacheAdress = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0].$["DB-FILE"];
+            tempDoc["CacheAdress"] = cacheAdress;
+            cache = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0]["CRAWL-DATA"][0].TEXT[0];
+            tempDoc["Cache"] = cache;
+
             try{
               tempDoc["TipoDocumento"] = convertDocType(foundArray._);
             }catch(e){
