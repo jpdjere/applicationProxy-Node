@@ -125,8 +125,8 @@ router.get('/sendData', (req, res) => {
 
             wex.listarDocumentos(queryObjectAND,5).then((result)=>{
               console.log("wexANDResponse: ");
-              console.log(result);
-              console.log(result.Datos.Documentos);
+              // console.log(result);
+              // console.log(result.Datos.Documentos);
               //Parseo la respuesta para eliminar indeseados y converitr a JSON
               result = JSON.stringify(result, null, 2);
               var regex = /\\n|<td>|<\/td>|<div>|<\/div>|<font>|<\/font>|<\/p>|<p>/;
@@ -138,8 +138,8 @@ router.get('/sendData', (req, res) => {
               console.log(" ");
               console.log(" ");
               console.log(" ");
-              console.log(" -----  wexResponse -------");
-              console.log(wexResponse);
+              // console.log(" -----  wexResponse -------");
+              // console.log(wexResponse);
               wexResponseToCheck = JSON.parse(wexResponse);
               // console.log(" -----  wexResponseToCheck.Datos -------");
               // console.log(wexResponseToCheck.Datos);
@@ -158,8 +158,8 @@ router.get('/sendData', (req, res) => {
                 console.log(" -----  NO SE ENCONTRO NADA CON AND -------");
                 console.log(" -----  Buscando con OR.............. -------");
                 wex.listarDocumentos(queryObjectOR,5).then((result)=>{
-                  console.log("wexORResponse: ");
-                  console.log(util.inspect(result, false, null))
+                  // console.log("wexORResponse: ");
+                  // console.log(util.inspect(result, false, null))
                   //Parseo la respuesta para eliminar indeseados y converitr a JSON
                   result = JSON.stringify(result, null, 2);
                   var regex = /\\n|<td>|<\/td>|<div>|<\/div>|<font>|<\/font>|<\/p>|<p>/;

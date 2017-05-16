@@ -3,10 +3,14 @@ var router = express.Router();
 var watson = require('watson-developer-cloud');
 var request = require('request');
 var _ = require('underscore');
+const cheerio = require('cheerio');
 var parseString = require('xml2js').parseString;
 //-------Para parsear listDocument-----------//
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser({strict:false});
+//-------Para parsear Cache-----------//
+const jsdom = require("jsdom");
+const {JSDOM} = jsdom;
 //---------GLOBALES----------//
 var a = '';
 var respuesta = '';
@@ -152,7 +156,75 @@ let listarDocumentos = (message,numDocs) =>{
             cacheAdress = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0].$["DB-FILE"];
             tempDoc["CacheAdress"] = cacheAdress;
             cache = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0]["CRAWL-DATA"][0].TEXT[0];
-            tempDoc["Cache"] = cache;
+
+            //Le pelo espacios vacios adelante y atras
+            parrafoDestacado = tempDoc["ParrafoDestacado"];
+            console.log(" ");
+            console.log(" ");
+            console.log(" ");
+            console.log(" Le pelo espacios vacios adelante y atras");
+            console.log(parrafoDestacado)
+
+            //Elimino ... del final
+            console.log(" ");
+            console.log(" ");
+            console.log(" ");
+            console.log(" Elimino ... del final");
+            parrafoDestacado = parrafoDestacado.substring(0,parrafoDestacado.length-5);
+            //Elimino TAGS html
+            parrafoDestacado = cheerio(parrafoDestacado).text();
+            console.log(" ");
+            console.log(" ");
+            console.log("El parrafoDestacado dps de Cheerio es:");
+            console.log("-----------------------:");
+            console.log(parrafoDestacado);
+            console.log(" ");
+            console.log(" ");
+            console.log(" ");
+
+            console.log("El parrafo spliteado por ... es:");
+            allPars = parrafoDestacado.split("...");
+            console.log(allPars);
+
+            //Copio el array allPars para poder looper sin romper
+            var newArray = allPars.slice();
+            console.log(" ");
+            console.log(" ");
+            console.log(" ");
+            console.log("Copio el array allPars para poder looper sin romper");
+            console.log(newArray);
+            //Genero el array de resultados con las tres primeras palabras
+            var resPars = [];
+            //Genero el array con las primeras palabras de cada parrafo
+            console.log(" ");
+            console.log(" ");
+            console.log(" ");
+            console.log("Entro al for loop para llenar las tres palabras");
+            for (var i = 0; i < allPars.length; i++) {
+              console.log(newArray[i].trim().split(" ").splice(0,3).join(" "));
+              resPars[i] = newArray[i].trim().split(" ").splice(0,3).join(" ");
+            }
+            console.log("resPars: Primeras palabras de todos los parrafos");
+            console.log(resPars);
+
+            const $ = cheerio.load(cache);
+            //Pinto los parrafos que tienen las primeras palabras que estan en el array
+            for (var i = 0; i < resPars.length; i++) {
+              // $( `p:contains(${resPars[i]})` ).css( "background", "yellow" );
+              // $( `span:contains(${resPars[i]})` ).css( "background", "yellow" );
+              // $( `div:contains(${resPars[i]})` ).css( "background", "yellow" );
+              // $( `li:contains(${resPars[i]})` ).css( "background", "yellow" );
+              // $( `font:contains(${resPars[i]})` ).css( "background", "yellow" );
+              // $( `ol:contains(${resPars[i]})` ).css( "background", "yellow" );
+              // $( `ul:contains(${resPars[i]})` ).css( "background", "yellow" );
+            }
+
+
+
+
+            //Meto el HTML reemplazado en el cache
+            tempDoc["Cache"] = $.html();
+
 
             try{
               tempDoc["TipoDocumento"] = convertDocType(foundArray._);
