@@ -14,7 +14,11 @@ var conversation = watson.conversation({
   version: 'v1',
   version_date: '2016-09-20'
 });
-var workspaceID="b69e22e3-bf63-4718-b778-221abdae8823";
+//gcba1
+// var workspaceID="b69e22e3-bf63-4718-b778-221abdae8823";
+
+//gcba-NuevaPropuesta
+var workspaceID="d746a3d1-af42-4961-9c3a-e20b61676a6d";
 var context;
 var context;
 var json = '';
@@ -24,6 +28,9 @@ var wexResponse = '';
 var preguntas = fs.createWriteStream('./preguntas.log');
 
 var wexResult = '';
+
+var confidenceLevel = 0.75;
+var numeroArchivosTraer = 3;
 
 
 router.get('/sendData', (req, res) => {
@@ -67,6 +74,7 @@ router.get('/sendData', (req, res) => {
     },
     function(err, response) {
       if (err){
+          console.log("Hubo un error en la respuesta de Converstaion: "+err)
           json = JSON.stringify({
             Response:response,
             Code:400,
@@ -91,7 +99,7 @@ router.get('/sendData', (req, res) => {
           console.log("confidence is: ",response.intents[0].confidence)
 
           //Si la confidence de Conversation es mayor o igual a 0.7 devuelvo el msj de Conversation
-          if(response.intents[0].confidence >= 0.6){
+          if(response.intents[0].confidence >= confidenceLevel){
             console.log("I'm in");
             // res.writeHead(200, {"Content-Type": "application/json"});
             json = JSON.stringify({
@@ -102,7 +110,7 @@ router.get('/sendData', (req, res) => {
             res.send(json);
           }
           //Si la confidence de Conversation es menor voy a buscar a WEX y traigo los resultados
-          else if(response.intents[0].confidence < 0.6){
+          else if(response.intents[0].confidence < confidenceLevel){
 
             //Creo el queryObject con AND como operator
             var regex = /\.|\?|\!/;
@@ -123,7 +131,7 @@ router.get('/sendData', (req, res) => {
             //Creo variable para resultados con AND. Esto voy a chequiar si trajo algo y si no, tiro el OR
             wexResponse = "";
 
-            wex.listarDocumentos(queryObjectAND,5).then((result)=>{
+            wex.listarDocumentos(queryObjectAND,numeroArchivosTraer).then((result)=>{
               console.log("wexANDResponse: ");
               // console.log(result);
               // console.log(result.Datos.Documentos);
@@ -157,7 +165,7 @@ router.get('/sendData', (req, res) => {
                 console.log(" ");
                 console.log(" -----  NO SE ENCONTRO NADA CON AND -------");
                 console.log(" -----  Buscando con OR.............. -------");
-                wex.listarDocumentos(queryObjectOR,5).then((result)=>{
+                wex.listarDocumentos(queryObjectOR,numeroArchivosTraer).then((result)=>{
                   // console.log("wexORResponse: ");
                   // console.log(util.inspect(result, false, null))
                   //Parseo la respuesta para eliminar indeseados y converitr a JSON

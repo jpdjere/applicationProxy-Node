@@ -43,9 +43,10 @@ var ontolectionsXML =
 <declare name="query-expansion.stem-expansions" /> <set-var name="query-expansion.stem-expansions">false</set-var>
 <declare name="query-expansion.stemming-weight" /> <set-var name="query-expansion.stemming-weight">0.5</set-var>
 <declare name="query-expansion.stemming-dictionary"/> <set-var name="query-expansion.stemming-dictionary">english/wildcard.dict</set-var>
-<declare name="query-expansion.automatic" /> <set-var name="query-expansion.automatic">narrower:0.9|synonym:0.8|spelling:0.8|translation:0.5|broader:0.8|related:0.2</set-var>
+<declare name="query-expansion.automatic" /> <set-var name="query-expansion.automatic">narrower:0.9|broader:0.9|synonym:0.9|spelling:0.8|translation:0.5|related:0.9</set-var>
 `;
 
+var stopWordsRegexList = /no|si/;
 
 //------------------ DEFINO EL QUERY A HACER Y LA COLECCION A APUNTAR ---------------//
 
@@ -53,6 +54,8 @@ var sources = 'gcba-servicio';
 var str = 'tarjeta'; //Para listarBusquedasSugeridas
 
 let listarDocumentos = (message,numDocs) =>{
+
+  cleanMessage = message.replaceAll(stopWordsRegexList,"");
 
   return new Promise(
       (resolve, reject) => {
@@ -85,7 +88,7 @@ let listarDocumentos = (message,numDocs) =>{
         // Este valor debe obtenerse a partir del uso de la clase ContextDelivery.
         'v.password' : config.documentos_pwd,
         // 'query-modification-macros':'enhance-query-with-querymodifier query-modification-expansion',
-        'query-modification-macros':'query-modification-expansion',
+        'query-modification-macros':'query-modification-expansion stopwords-query-spanish',
         //boolean output-summary - If enabled, summaries will be generated for each result (based on the contents selected in the collection configuration).
         //Summaries usually provide a better user experience and better clustering but can have a substantial I/O cost (it is therefore advised to turn this
         // off when retrieving a large number of results).
@@ -100,7 +103,7 @@ let listarDocumentos = (message,numDocs) =>{
       console.log("-----------------------------------");
       console.log("-----------------------------------");
       console.log("XML body:   ");
-      console.log(body);
+      // console.log(body);
       //Parseo el XML
       parser.parseString(body,function (err, result) {
 
@@ -110,7 +113,7 @@ let listarDocumentos = (message,numDocs) =>{
         console.log("Parsed result is:");
         console.log(result);
         console.log("-----------------------------------");
-        console.log(JSON.stringify(result,null,2));
+        // console.log(JSON.stringify(result,null,2));
         console.log("-----------------------------------");
         console.log("-----------------------------------");
         console.log("-----------------------------------");
@@ -142,6 +145,11 @@ let listarDocumentos = (message,numDocs) =>{
         try_catch_else_finally(function() {
           // protected block
           for(var i = 0;i<a["QUERY-RESULTS"].LIST[0].DOCUMENT.length;i++){
+            console.log("Numero de loop es:  ")
+            console.log("Numero de loop es:  ")
+            console.log("Numero de loop es:  ")
+            console.log("Numero de loop es:  ")
+            console.log(i)
             tempDoc = {};
             //Busco URL desde $
             tempDoc["URL"] = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].$["URL"];
@@ -156,74 +164,75 @@ let listarDocumentos = (message,numDocs) =>{
             cacheAdress = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0].$["DB-FILE"];
             tempDoc["CacheAdress"] = cacheAdress;
             cache = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0]["CRAWL-DATA"][0].TEXT[0];
+            tempDoc["Cache"] = cache;
 
-            //Le pelo espacios vacios adelante y atras
-            parrafoDestacado = tempDoc["ParrafoDestacado"];
-            console.log(" ");
-            console.log(" ");
-            console.log(" ");
-            console.log(" Le pelo espacios vacios adelante y atras");
-            console.log(parrafoDestacado)
-
-            //Elimino ... del final
-            console.log(" ");
-            console.log(" ");
-            console.log(" ");
-            console.log(" Elimino ... del final");
-            parrafoDestacado = parrafoDestacado.substring(0,parrafoDestacado.length-5);
-            //Elimino TAGS html
-            parrafoDestacado = cheerio(parrafoDestacado).text();
-            console.log(" ");
-            console.log(" ");
-            console.log("El parrafoDestacado dps de Cheerio es:");
-            console.log("-----------------------:");
-            console.log(parrafoDestacado);
-            console.log(" ");
-            console.log(" ");
-            console.log(" ");
-
-            console.log("El parrafo spliteado por ... es:");
-            allPars = parrafoDestacado.split("...");
-            console.log(allPars);
-
-            //Copio el array allPars para poder looper sin romper
-            var newArray = allPars.slice();
-            console.log(" ");
-            console.log(" ");
-            console.log(" ");
-            console.log("Copio el array allPars para poder looper sin romper");
-            console.log(newArray);
-            //Genero el array de resultados con las tres primeras palabras
-            var resPars = [];
-            //Genero el array con las primeras palabras de cada parrafo
-            console.log(" ");
-            console.log(" ");
-            console.log(" ");
-            console.log("Entro al for loop para llenar las tres palabras");
-            for (var i = 0; i < allPars.length; i++) {
-              console.log(newArray[i].trim().split(" ").splice(0,3).join(" "));
-              resPars[i] = newArray[i].trim().split(" ").splice(0,3).join(" ");
-            }
-            console.log("resPars: Primeras palabras de todos los parrafos");
-            console.log(resPars);
-
-            const $ = cheerio.load(cache);
-            //Pinto los parrafos que tienen las primeras palabras que estan en el array
-            for (var i = 0; i < resPars.length; i++) {
-              // $( `p:contains(${resPars[i]})` ).css( "background", "yellow" );
-              // $( `span:contains(${resPars[i]})` ).css( "background", "yellow" );
-              // $( `div:contains(${resPars[i]})` ).css( "background", "yellow" );
-              // $( `li:contains(${resPars[i]})` ).css( "background", "yellow" );
-              // $( `font:contains(${resPars[i]})` ).css( "background", "yellow" );
-              // $( `ol:contains(${resPars[i]})` ).css( "background", "yellow" );
-              // $( `ul:contains(${resPars[i]})` ).css( "background", "yellow" );
-            }
+            // //Le pelo espacios vacios adelante y atras
+            // parrafoDestacado = tempDoc["ParrafoDestacado"];
+            // console.log(" ");
+            // console.log(" ");
+            // console.log(" ");
+            // console.log(" Le pelo espacios vacios adelante y atras");
+            // console.log(parrafoDestacado)
+            //
+            // //Elimino ... del final
+            // console.log(" ");
+            // console.log(" ");
+            // console.log(" ");
+            // console.log(" Elimino ... del final");
+            // parrafoDestacado = parrafoDestacado.substring(0,parrafoDestacado.length-5);
+            // //Elimino TAGS html
+            // parrafoDestacado = cheerio(parrafoDestacado).text();
+            // console.log(" ");
+            // console.log(" ");
+            // console.log("El parrafoDestacado dps de Cheerio es:");
+            // console.log("-----------------------:");
+            // console.log(parrafoDestacado);
+            // console.log(" ");
+            // console.log(" ");
+            // console.log(" ");
+            //
+            // console.log("El parrafo spliteado por ... es:");
+            // allPars = parrafoDestacado.split("...");
+            // console.log(allPars);
+            //
+            // //Copio el array allPars para poder looper sin romper
+            // var newArray = allPars.slice();
+            // console.log(" ");
+            // console.log(" ");
+            // console.log(" ");
+            // console.log("Copio el array allPars para poder looper sin romper");
+            // console.log(newArray);
+            // //Genero el array de resultados con las tres primeras palabras
+            // var resPars = [];
+            // //Genero el array con las primeras palabras de cada parrafo
+            // console.log(" ");
+            // console.log(" ");
+            // console.log(" ");
+            // console.log("Entro al for loop para llenar las tres palabras");
+            // for (var i = 0; i < allPars.length; i++) {
+            //   console.log(newArray[i].trim().split(" ").splice(0,3).join(" "));
+            //   resPars[i] = newArray[i].trim().split(" ").splice(0,3).join(" ");
+            // }
+            // console.log("resPars: Primeras palabras de todos los parrafos");
+            // console.log(resPars);
+            //
+            // const $ = cheerio.load(cache);
+            // //Pinto los parrafos que tienen las primeras palabras que estan en el array
+            // for (var i = 0; i < resPars.length; i++) {
+            //   // $( `p:contains(${resPars[i]})` ).css( "background", "yellow" );
+            //   // $( `span:contains(${resPars[i]})` ).css( "background", "yellow" );
+            //   // $( `div:contains(${resPars[i]})` ).css( "background", "yellow" );
+            //   // $( `li:contains(${resPars[i]})` ).css( "background", "yellow" );
+            //   // $( `font:contains(${resPars[i]})` ).css( "background", "yellow" );
+            //   // $( `ol:contains(${resPars[i]})` ).css( "background", "yellow" );
+            //   // $( `ul:contains(${resPars[i]})` ).css( "background", "yellow" );
+            // }
 
 
 
 
             //Meto el HTML reemplazado en el cache
-            tempDoc["Cache"] = $.html();
+            // tempDoc["Cache"] = $.html();
 
 
             try{
