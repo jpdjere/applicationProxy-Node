@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 var watson = require('watson-developer-cloud');
 var request = require('request');
+var fs = require('fs');
+var path = require('path');
 var _ = require('underscore');
+const he = require('he');
 const cheerio = require('cheerio');
 var parseString = require('xml2js').parseString;
 //-------Para parsear listDocument-----------//
@@ -26,7 +29,7 @@ config.documentos_user="api-user";
 config.documentos_pwd="TH1nk1710";
 
 var INDEXED_ONTOLECTION_NAME = "iopro-tm-gcba-terms";
-var SEARCH_COLLECTION_NAME = "gcba-servicio";
+var SEARCH_COLLECTION_NAME = "gcba-metadata";
 
 var ontolectionsXML =
 `
@@ -39,7 +42,7 @@ var ontolectionsXML =
 <declare name="query-expansion.conceptual-search-similarity-threshold" /> <set-var name="query-expansion.conceptual-search-similarity-threshold">0.7</set-var>
 <declare name="query-expansion.conceptual-search-metric" /> <set-var name="query-expansion.conceptual-search-metric">euclidean-dot-product</set-var>
 <declare name="query-expansion.conceptual-search-candidates-max" /> <set-var name="query-expansion.conceptual-search-candidates-max">euclidean-dot-product</set-var>
-<declare name="query-expansion.conceptual-search-sources" /> <set-var name="query-expansion.conceptual-search-sources">gcba-servicio</set-var>
+<declare name="query-expansion.conceptual-search-sources" /> <set-var name="query-expansion.conceptual-search-sources">gcba-metadata</set-var>
 <declare name="query-expansion.stem-expansions" /> <set-var name="query-expansion.stem-expansions">false</set-var>
 <declare name="query-expansion.stemming-weight" /> <set-var name="query-expansion.stemming-weight">0.5</set-var>
 <declare name="query-expansion.stemming-dictionary"/> <set-var name="query-expansion.stemming-dictionary">english/wildcard.dict</set-var>
@@ -50,7 +53,7 @@ var stopWordsRegexList = /no|si/;
 
 //------------------ DEFINO EL QUERY A HACER Y LA COLECCION A APUNTAR ---------------//
 
-var sources = 'gcba-servicio';
+var sources = 'gcba-metadata';
 var str = 'tarjeta'; //Para listarBusquedasSugeridas
 
 let listarDocumentos = (message,numDocs) =>{
@@ -103,7 +106,8 @@ let listarDocumentos = (message,numDocs) =>{
       console.log("-----------------------------------");
       console.log("-----------------------------------");
       console.log("XML body:   ");
-      // console.log(body);
+      console.log(body);
+      console.log("-----------------------------------");
       //Parseo el XML
       parser.parseString(body,function (err, result) {
 
@@ -117,6 +121,18 @@ let listarDocumentos = (message,numDocs) =>{
         console.log("-----------------------------------");
         console.log("-----------------------------------");
         console.log("-----------------------------------");
+
+        //Imprimo un log
+        fs.writeFile(path.join(__dirname, '../' ,'parsedWEXResponses', 'wex-response.json'), JSON.stringify(response), function(err) {
+            if(err) {
+                return console.log(err);
+            }
+
+            console.log("The file was saved!");
+            console.log(" ");
+
+        });
+
         respuesta =
         {
 
@@ -156,15 +172,27 @@ let listarDocumentos = (message,numDocs) =>{
             //Defino Content para hacer las busquedas que correspondan con Underscore
             contentArray = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CONTENT;
             //Busco el array correspondiente y pusheo el valor que necesito.
-            foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'title' })
+            foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'titulo' })
             tempDoc["Titulo"] = foundArray._;
-            foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'snippet' })
+            foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'texto' })
+            // foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'articulo' })
             tempDoc["ParrafoDestacado"] = foundArray._;
-            foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'filetype' })
+            // foundArray = _.find(contentArray, function(obj) { return obj.$.NAME == 'filetype' })
             cacheAdress = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0].$["DB-FILE"];
             tempDoc["CacheAdress"] = cacheAdress;
             cache = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0]["CRAWL-DATA"][0].TEXT[0];
             tempDoc["Cache"] = cache;
+
+            //Imprimo un log del cache
+            fs.writeFile(path.join(__dirname, '../' ,'parsedWEXResponses', 'cache.xml'), cache, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+
+                console.log("The file was saved!");
+                console.log(" ");
+
+            });
 
             // //Le pelo espacios vacios adelante y atras
             // parrafoDestacado = tempDoc["ParrafoDestacado"];
@@ -228,11 +256,45 @@ let listarDocumentos = (message,numDocs) =>{
             //   // $( `ul:contains(${resPars[i]})` ).css( "background", "yellow" );
             // }
 
+            console.log(" ")
+            console.log(" ")
+            console.log("Parrafo Destacado:")
+            console.log(tempDoc["ParrafoDestacado"])
 
 
+
+            cacheToFix = cache;
+            parrafoToFix = tempDoc["ParrafoDestacado"];
+            var parrafoEncodeado = he.encode(parrafoToFix, {
+              'useNamedReferences': true
+            });
+
+            //Imprimo un log del parrafoDestacado
+            fs.writeFile(path.join(__dirname, '../' ,'parsedWEXResponses', i+'-parrafoDestacado.xml'), parrafoEncodeado, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+
+                console.log("The file was saved!");
+                console.log(" ");
+
+            });
+
+            cacheToFix = cacheToFix.replaceAll(parrafoEncodeado,"<span style='background:yellow'>"+parrafoEncodeado+"</span>");
+
+            //Imprimo un log del cache reemplazado
+            fs.writeFile(path.join(__dirname, '../' ,'parsedWEXResponses', 'cacheReemplazado.xml'), cacheToFix, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+
+                console.log("The file was saved!");
+                console.log(" ");
+
+            });
 
             //Meto el HTML reemplazado en el cache
-            // tempDoc["Cache"] = $.html();
+            tempDoc["Cache"] = cacheToFix;
 
 
             try{
@@ -426,5 +488,13 @@ String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
+
+function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
+
 
 module.exports = {router,listarDocumentos,listarBusquedasSugeridas}
