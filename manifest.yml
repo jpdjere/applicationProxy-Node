@@ -1,0 +1,4 @@
+applications:
+- name: gcba-conversation-wex
+  random-route: true
+  memory: 256M

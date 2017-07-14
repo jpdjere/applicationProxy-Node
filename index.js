@@ -3,6 +3,7 @@ var watson = require('watson-developer-cloud');
 var qs = require('querystring');
 var fs = require('fs');
 var express = require('express');
+var path = require('path');
 var router = express.Router();
 const util = require('util')
 
@@ -19,8 +20,10 @@ var conversation = watson.conversation({
 
 //gcba-NuevaPropuesta
 var workspaceID="d746a3d1-af42-4961-9c3a-e20b61676a6d";
-var context;
-var context;
+var fecha6meses = new Date().setMonth(new Date().getMonth() - 6);
+var context = {
+    "6meses": new Date(fecha6meses)
+};
 var json = '';
 var wexResponse = '';
 
@@ -30,7 +33,7 @@ var preguntas = fs.createWriteStream('./preguntas.log');
 var wexResult = '';
 
 var confidenceLevel = 0.75;
-var numeroArchivosTraer = 3;
+var numeroArchivosTraer = 5;
 
 
 router.get('/sendData', (req, res) => {
@@ -99,7 +102,7 @@ router.get('/sendData', (req, res) => {
           console.log("confidence is: ",response.intents[0].confidence)
 
           //Si la confidence de Conversation es mayor o igual a 0.7 devuelvo el msj de Conversation
-          if(response.intents[0].confidence >= confidenceLevel){
+          if(response.intents[0].confidence >= confidenceLevel || context.acta !== ""){
             console.log("I'm in");
             // res.writeHead(200, {"Content-Type": "application/json"});
             json = JSON.stringify({
@@ -202,16 +205,17 @@ router.get('/sendData', (req, res) => {
 
 });
 
-router.get('/', (req, res) => {
-  // res.writeHead(200,{'Content-Type':'text/plain'});
-  res.send('Servidor corriendo22!!');
-})
-
 //Creo funcion para reemplazar todas las instancias de algo en un string.
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
+/*---------------------GET REQUEST ----------------------*/
+router.get('/', function(req, res, next) {
+  res.header("Content-Type", "text/html; charset=utf-8");
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+/*--------------------------------------------------------*/
 
 module.exports = router;

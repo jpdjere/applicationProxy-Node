@@ -18,10 +18,14 @@ const {JSDOM} = jsdom;
 var a = '';
 var respuesta = '';
 var config = {};
+
 // config.END_POINT_BUSQUEDAS = "http://sirius.mybluemix.net/ListarBusquedasSugeridas";
-config.END_POINT_BUSQUEDAS = "http://192.168.1.29:9080/vivisimo/cgi-bin/velocity.exe";
+//config.END_POINT_BUSQUEDAS = "http://192.168.1.29:9080/vivisimo/cgi-bin/velocity.exe";
+config.END_POINT_BUSQUEDAS = "http://fde70d0b.ngrok.io/vivisimo/cgi-bin/velocity.exe";
+
 // config.END_POINT_DOCUMENTOS="http://sirius.mybluemix.net/LIstarDocumentos";
-config.END_POINT_DOCUMENTOS="http://192.168.1.29:9080/vivisimo/cgi-bin/velocity.exe";
+//config.END_POINT_DOCUMENTOS="http://192.168.1.29:9080/vivisimo/cgi-bin/velocity.exe";
+config.END_POINT_DOCUMENTOS="http://fde70d0b.ngrok.io/vivisimo/cgi-bin/velocity.exe";
 config.sugerencias_dic="dic-general";
 config.sugerencias_user="api-user";
 config.sugerencias_pwd="TH1nk1710";
@@ -35,14 +39,14 @@ var ontolectionsXML =
 `
 <declare name="query-expansion.enabled" /> <set-var name="query-expansion.enabled">true</set-var>
 <declare name="query-expansion.user-profile" /> <set-var name="query-expansion.user-profile">on</set-var>
-<declare name="query-expansion.ontolections" /> <set-var name="query-expansion.ontolections">iopro-tm-gcba-terms</set-var>
+<declare name="query-expansion.ontolections" /> <set-var name="query-expansion.ontolections">${INDEXED_ONTOLECTION_NAME}</set-var>
 <declare name="query-expansion.max-terms-per-type" /> <set-var name="query-expansion.max-terms-per-type">20</set-var>
 <declare name="query-expansion.suggestion" /> <set-var name="query-expansion.suggestion"></set-var>
 <declare name="query-expansion.query-match-type" /> <set-var name="query-expansion.query-match-type">terms</set-var>
 <declare name="query-expansion.conceptual-search-similarity-threshold" /> <set-var name="query-expansion.conceptual-search-similarity-threshold">0.7</set-var>
 <declare name="query-expansion.conceptual-search-metric" /> <set-var name="query-expansion.conceptual-search-metric">euclidean-dot-product</set-var>
 <declare name="query-expansion.conceptual-search-candidates-max" /> <set-var name="query-expansion.conceptual-search-candidates-max">euclidean-dot-product</set-var>
-<declare name="query-expansion.conceptual-search-sources" /> <set-var name="query-expansion.conceptual-search-sources">gcba-metadata</set-var>
+<declare name="query-expansion.conceptual-search-sources" /> <set-var name="query-expansion.conceptual-search-sources">${SEARCH_COLLECTION_NAME}</set-var>
 <declare name="query-expansion.stem-expansions" /> <set-var name="query-expansion.stem-expansions">false</set-var>
 <declare name="query-expansion.stemming-weight" /> <set-var name="query-expansion.stemming-weight">0.5</set-var>
 <declare name="query-expansion.stemming-dictionary"/> <set-var name="query-expansion.stemming-dictionary">english/wildcard.dict</set-var>
@@ -105,8 +109,17 @@ let listarDocumentos = (message,numDocs) =>{
 
       console.log("-----------------------------------");
       console.log("-----------------------------------");
-      console.log("XML body:   ");
-      console.log(body);
+      console.log("imprimo XML body:   ");
+      //Imprimo un log del XML
+      fs.writeFile(path.join(__dirname, '../' ,'parsedWEXResponses', 'wex-XML-response.xml'), body, function(err) {
+          if(err) {
+              return console.log(err);
+          }
+
+          console.log("The file was saved!");
+          console.log(" ");
+
+      });
       console.log("-----------------------------------");
       //Parseo el XML
       parser.parseString(body,function (err, result) {
@@ -161,9 +174,9 @@ let listarDocumentos = (message,numDocs) =>{
         try_catch_else_finally(function() {
           // protected block
           for(var i = 0;i<a["QUERY-RESULTS"].LIST[0].DOCUMENT.length;i++){
-            console.log("Numero de loop es:  ")
-            console.log("Numero de loop es:  ")
-            console.log("Numero de loop es:  ")
+
+
+
             console.log("Numero de loop es:  ")
             console.log(i)
             tempDoc = {};
@@ -183,6 +196,20 @@ let listarDocumentos = (message,numDocs) =>{
             cache = a["QUERY-RESULTS"].LIST[0].DOCUMENT[i].CACHE[0]["CRAWL-DATA"][0].TEXT[0];
             tempDoc["Cache"] = cache;
 
+            const $ = cheerio.load(cache);
+
+            var tituloDoc = $('title').text()
+            if(tempDoc["Titulo"] === undefined){
+              tempDoc["Titulo"] = tituloDoc;
+            }else{
+              tempDoc["Titulo"] += " "+tituloDoc;
+            }
+
+            //Si el Parrafo Destacado quedó vacio, paso al proximo resultado
+            if(tempDoc["ParrafoDestacado"] === undefined){
+              continue;
+            }
+
             //Imprimo un log del cache
             fs.writeFile(path.join(__dirname, '../' ,'parsedWEXResponses', 'cache.xml'), cache, function(err) {
                 if(err) {
@@ -194,80 +221,26 @@ let listarDocumentos = (message,numDocs) =>{
 
             });
 
-            // //Le pelo espacios vacios adelante y atras
-            // parrafoDestacado = tempDoc["ParrafoDestacado"];
-            // console.log(" ");
-            // console.log(" ");
-            // console.log(" ");
-            // console.log(" Le pelo espacios vacios adelante y atras");
-            // console.log(parrafoDestacado)
-            //
-            // //Elimino ... del final
-            // console.log(" ");
-            // console.log(" ");
-            // console.log(" ");
-            // console.log(" Elimino ... del final");
-            // parrafoDestacado = parrafoDestacado.substring(0,parrafoDestacado.length-5);
-            // //Elimino TAGS html
-            // parrafoDestacado = cheerio(parrafoDestacado).text();
-            // console.log(" ");
-            // console.log(" ");
-            // console.log("El parrafoDestacado dps de Cheerio es:");
-            // console.log("-----------------------:");
-            // console.log(parrafoDestacado);
-            // console.log(" ");
-            // console.log(" ");
-            // console.log(" ");
-            //
-            // console.log("El parrafo spliteado por ... es:");
-            // allPars = parrafoDestacado.split("...");
-            // console.log(allPars);
-            //
-            // //Copio el array allPars para poder looper sin romper
-            // var newArray = allPars.slice();
-            // console.log(" ");
-            // console.log(" ");
-            // console.log(" ");
-            // console.log("Copio el array allPars para poder looper sin romper");
-            // console.log(newArray);
-            // //Genero el array de resultados con las tres primeras palabras
-            // var resPars = [];
-            // //Genero el array con las primeras palabras de cada parrafo
-            // console.log(" ");
-            // console.log(" ");
-            // console.log(" ");
-            // console.log("Entro al for loop para llenar las tres palabras");
-            // for (var i = 0; i < allPars.length; i++) {
-            //   console.log(newArray[i].trim().split(" ").splice(0,3).join(" "));
-            //   resPars[i] = newArray[i].trim().split(" ").splice(0,3).join(" ");
-            // }
-            // console.log("resPars: Primeras palabras de todos los parrafos");
-            // console.log(resPars);
-            //
-            // const $ = cheerio.load(cache);
-            // //Pinto los parrafos que tienen las primeras palabras que estan en el array
-            // for (var i = 0; i < resPars.length; i++) {
-            //   // $( `p:contains(${resPars[i]})` ).css( "background", "yellow" );
-            //   // $( `span:contains(${resPars[i]})` ).css( "background", "yellow" );
-            //   // $( `div:contains(${resPars[i]})` ).css( "background", "yellow" );
-            //   // $( `li:contains(${resPars[i]})` ).css( "background", "yellow" );
-            //   // $( `font:contains(${resPars[i]})` ).css( "background", "yellow" );
-            //   // $( `ol:contains(${resPars[i]})` ).css( "background", "yellow" );
-            //   // $( `ul:contains(${resPars[i]})` ).css( "background", "yellow" );
-            // }
 
             console.log(" ")
             console.log(" ")
+            console.log("Titulo:")
+            console.log(tempDoc["Titulo"])
             console.log("Parrafo Destacado:")
             console.log(tempDoc["ParrafoDestacado"])
 
 
 
             cacheToFix = cache;
-            parrafoToFix = tempDoc["ParrafoDestacado"];
-            var parrafoEncodeado = he.encode(parrafoToFix, {
-              'useNamedReferences': true
-            });
+            try {
+              parrafoToFix = tempDoc["ParrafoDestacado"];
+              var parrafoEncodeado = he.encode(parrafoToFix, {
+                'useNamedReferences': true
+              });
+
+            } catch (e) {
+              console.log("No hay parrafoDestacado");
+            }
 
             //Imprimo un log del parrafoDestacado
             fs.writeFile(path.join(__dirname, '../' ,'parsedWEXResponses', i+'-parrafoDestacado.xml'), parrafoEncodeado, function(err) {
@@ -280,7 +253,15 @@ let listarDocumentos = (message,numDocs) =>{
 
             });
 
-            cacheToFix = cacheToFix.replaceAll(parrafoEncodeado,"<span style='background:yellow'>"+parrafoEncodeado+"</span>");
+            try {
+              cacheToFix = cacheToFix.replaceAll(parrafoEncodeado,"<span style='background:yellow' id='subrayado'>"+parrafoEncodeado+"</span>");
+            } catch (e) {
+                console.log(" ");
+                console.log(" ");
+                console.log("No se pudo hacer el subrayado");
+                console.log(" ");
+                console.log(" ");
+            }
 
             //Imprimo un log del cache reemplazado
             fs.writeFile(path.join(__dirname, '../' ,'parsedWEXResponses', 'cacheReemplazado.xml'), cacheToFix, function(err) {

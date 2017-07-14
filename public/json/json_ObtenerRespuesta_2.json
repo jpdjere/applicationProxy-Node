@@ -1,0 +1,63 @@
+{
+	"BGBAResultadoOperacion": {
+		"Severidad":"INFO",
+		"Codigo":"INF-003",
+		"Descripcion":"Se encontraron alertas en la ejecución. Ver el log para mayor detalle",
+		"Tipo":"Seguridad",
+		"URLDetalle":"http://ws.bancogalicia.com.ar/webservices/globales/bgbaheader/I-003.html",
+		"IdRespuesta": {
+			"NombreProveedor":"COG"
+		}
+	},
+	"Datos":
+	{
+		"input":
+		{ "text":[
+			"Bienvenido, mi nombre es Watson",
+			"Como puedo ayudarte"
+		]
+		},
+		"Respuesta":
+		{ "texto":[
+			"Bienvenido, mi nombre es Watson",
+			"Como puedo ayudarte"
+		]
+		},
+		"Contexto": {
+			"IdConversacion":"e45bab26-d1a4-413a-b2b5-6185507407ab",
+			"Usuario": {
+				"Contador":3,
+				"Alternativas": {
+					"Intenciones": ["CC_Hola","ya_tengo_otro_hipotecario","CC_De_que_sabes"],
+					"Preguntas": ["Hola","puedo sacar si ya tengo otro prestamo","que sabes?"]
+				},
+				"Sugerencias": {
+					"Mostrar": true,
+					"Topicos":["Que es el CER?", "Que son las UVAS?"]
+				},
+				"Opciones": {
+					"Mostrar":true,
+					"Desambiguacion":["Linea UVA", "Linea Procrear"]
+				}
+			}
+		}
+
+	},
+	"BGBAResultadoOperacionLog": [
+		{"LogItem": {
+			"Severidad":"INFO",
+			"Codigo":"INF-003",
+			"Descripcion":"Datos de sucursal validados correctamente",
+			"Tipo":"Seguridad",
+			"URLDetalle":"http://ws.bancogalicia.com.ar/webservices/globales/bgbaheader/I-003.html"
+		}},
+		{"LogItem": {
+			"Severidad":"INFO",
+			"Codigo":"INF-001",
+			"Descripcion":"Operación autenticada",
+			"Tipo":"Seguridad",
+			"URLDetalle":"http://ws.bancogalicia.com.ar/webservices/globales/bgbaheader/I-001.html"
+		}}
+	]
+}
+

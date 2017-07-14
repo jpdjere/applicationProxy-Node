@@ -32,6 +32,14 @@ app.use(function(err,req,res,next){
 });
 app.use(bodyParser.urlencoded({ extended: false }));
 
+/*-------- seteo enconding de *.js a utf-8---------*/
+app.use(function(req, res, next) {
+  if (/.*\.js/.test(req.path)) {
+    res.charset = "utf-8";
+  }
+  next();
+});
+
 app.use(function(req, res, next) {
     //the code hits this point!
     var data = '';

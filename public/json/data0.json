@@ -1,0 +1,56 @@
+{
+  "intents": [
+    {
+      "intent": "CC_Hola",
+      "confidence": 1
+    }
+  ],
+  "entities": [],
+  "input": {
+    "text": "hola"
+  },
+  "output": {
+    "log_messages": [],
+    "text": [
+      "<p>Hola soy <strong>Gala</strong>, &iquest;en qu&eacute; podr&iacute;a ayudarte?</p>"
+    ],
+    "nodes_visited": [
+      "node_1_1474565951597"
+    ]
+  },
+  "context": {
+    "dialog_turn_counter": 0,
+    "conversation_id": "d4912036-d048-4916-b41d-f0a361893191",
+    "system": {
+      "dialog_stack": [
+        {
+          "dialog_node": "root"
+        }
+      ],
+      "dialog_turn_counter": 1,
+      "dialog_request_counter": 1,
+      "_node_output_map": {
+        "node_1_1474565951597": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "counter": 0,
+    "options": [],
+    "has_html": false,
+    "last_text": "",
+    "has_options": false,
+    "text_counter": 0,
+    "possibleIntents": [],
+    "possibleQuestions": [],
+    "suggestion_topics": [],
+    "disclaimer_procrear": "<br><p style='color:rgrey;font-size:70%;'><b>Aclaraci&oacute;n</b>: La inscripci&oacute;n al programa PROCREAR Casa Propia finaliz&oacute; el d&iacute;a 30/11/2016. En caso que la misma se reabra lo estaremos publicando en nuestro sitio web.</p>",
+    "last_desambiguation": " ",
+    "sugestions_required": true,
+    "ask_answer_was_useful": true,
+    "has_suggestions_topics": false
+  }
+}
+

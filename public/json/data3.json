@@ -1,0 +1,102 @@
+{
+  "intents": [
+    {
+      "intent": "Condiciones_generales",
+      "confidence": 0.9999886130911352
+    }
+  ],
+  "entities": [
+    {
+      "entity": "",
+      "location": [
+        41,
+        60
+      ],
+      "value": ""
+    },
+    {
+      "entity": "",
+      "location": [
+        56,
+        61
+      ],
+      "value": ""
+    }
+  ],
+  "input": {
+    "text": "C&oacute;mo financio la deuda?"
+  },
+  "output": {
+    "log_messages": [],
+    "text": [
+      "<p> Comunicate con Refinanciaciones al 0810-444-6590 de lunes a viernes de 9 a 21hs.</p>"
+    ],
+    "nodes_visited": [
+      "node_1_1476541144051",
+      "node_22_1482011849658",
+      "node_91_1482420505070"
+    ]
+  },
+  "context": {
+    "dialog_turn_counter": 0,
+    "conversation_id": "8e1420de-1ae8-4b9a-afed-28292034ffc5",
+    "system": {
+      "dialog_stack": [
+        {
+          "dialog_node": "node_91_1482420505070"
+        }
+      ],
+      "dialog_turn_counter": 6,
+      "dialog_request_counter": 6,
+      "_node_output_map": {
+        "node_1_1474565951597": [
+          0,
+          1,
+          0
+        ],
+        "node_15_1482007143852": [
+          0,
+          0
+        ],
+        "node_108_1479233538439": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "node_22_1482011849658": [
+          0,
+          0
+        ]
+      }
+    },
+    "counter": 4,
+    "options": [],
+    "has_html": true,
+    "last_text": "que condiciones tiene el prestamo",
+    "has_options": false,
+    "text_counter": 0,
+    "possibleIntents": [
+
+    ],
+    "possibleQuestions": [
+
+    ],
+    "suggestion_topics": [
+
+    ],
+    "disclaimer_procrear": "",
+    "last_desambiguation": "Condiciones_generales",
+    "sugestions_required": true,
+    "ask_answer_was_useful": true,
+    "has_suggestions_topics": true,
+    "j": 7,
+    "siete": true,
+    "not_confident": false,
+    "chitchat": false,
+    "has_suggestion_topics": false,
+    "linea_elegida": "",
+    "procrear_suggestions": false,
+    "uvas_suggestions": false
+  }
+}

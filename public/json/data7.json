@@ -1,0 +1,81 @@
+{
+  "intents": [
+    {
+      "intent": "Plazos_proceso",
+      "confidence": 0.5409132196801886
+    }
+  ],
+  "entities": [],
+  "input": {
+    "text": "en cuanto tiempo me lo dan?"
+  },
+  "output": {
+    "log_messages": [],
+    "text": [
+      "<p>Entre la presentaci&oacute;n de la documentaci&oacute;n necesaria para la activaci&oacute;n de tu pr&eacute;stamo y el momento de la firma de la escritura pueden pasar entre 20 y 30 d&iacute;as, siempre y cuando tengas elegida una propiedad que cumpla con las condiciones necesarias para el otorgamiento.</p>"
+    ],
+    "nodes_visited": []
+  },
+  "context": {
+    "dialog_turn_counter": 0,
+    "conversation_id": "1ca6c8bf-f344-476d-9c2e-12e914b0b94f",
+    "system": {
+      "dialog_stack": [
+        {
+          "dialog_node": "root"
+        }
+      ],
+      "dialog_turn_counter": 7,
+      "dialog_request_counter": 7,
+      "_node_output_map": {
+        "node_1_1474565951597": [
+          0,
+          0,
+          1
+        ],
+        "node_15_1482007143852": [
+          0,
+          0
+        ],
+        "node_22_1482011849658": [
+          0,
+          0
+        ]
+      }
+    },
+    "counter": 3,
+    "options": [],
+    "has_html": true,
+    "last_text": "en cuanto tiempo me lo dan?",
+    "has_options": false,
+    "text_counter": 1,
+    "possibleIntents": [
+      "eleccion_vivienda",
+      "Simulador",
+      "examen_medico",
+      "Excepciones"
+    ],
+    "possibleQuestions": [
+      "Tengo que elegir la vivienda antes o después de cargar la solicitud?",
+      "Qué monto puedo solicitar?",
+      "Debo hacer examen médico?",
+      "Puedo pedir más plata de la preaprobada?"
+    ],
+    "suggestion_topics": [
+      "Cuales son los pasos para solicitar el préstamo?"
+    ],
+    "disclaimer_procrear": "",
+    "last_desambiguation": "Condiciones_generales",
+    "sugestions_required": true,
+    "ask_answer_was_useful": true,
+    "has_suggestions_topics": true,
+    "j": 10,
+    "not_confident": false,
+    "chitchat": false,
+    "has_suggestion_topics": false,
+    "uvas_suggestions": false,
+    "procrear_suggestions": false,
+    "linea_elegida": "PROCREAR",
+    "siete": true
+  }
+}

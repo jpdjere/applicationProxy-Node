@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><query-results><binning><binning-set label="Artículo" bs-id="gcba-metadata|0"><bin state="gcba-metadata|0==Artículo 13.-" label="Artículo 13.-" ndocs="1" cndocs="1" /></binning-set><binning-state /></binning><query><operator logic="and"><term field="v.output-cache-data" str="true" processing="optional" input-type="system" /><term field="query" str="novillo" position="0" processing="strict" input-type="user" /></operator></query><added-source name="iopro-tm-gcba-terms" test-strictly="test-strictly" modified="1492613794" modified-by="api-user" over-request="1.3" num-per-source="20" status="queried" admin-url="http://DESKTOP-5TQBKKA:9080/vivisimo/cgi-bin/admin.exe" requested="20" total-results="0" total-results-with-duplicates="0" retrieval-ms="3" search-ms="1"><parse url="http://127.0.0.1:7205/search?query-xml=%3coperator%20logic%3d%22and%22%3e%3coperator%20logic%3d%22not%22%3e%3coperator%20logic%3d%22content%22%3e%3cterm%20field%3d%22query%22%20str%3d%22preview%22%20processing%3d%22strict%22%20input-type%3d%22user%22%20%2f%3e%3c%2foperator%3e%3c%2foperator%3e%3coperator%20logic%3d%22or%22%3e%3cterm%20field%3d%22environment%22%20str%3d%221%22%20%2f%3e%3cterm%20field%3d%22environment%22%20str%3d%22all%22%20%2f%3e%3c%2foperator%3e%3coperator%20logic%3d%22within%22%3e%3cterm%20field%3d%22query%22%20str%3d%22novillo%22%20processing%3d%22strict%22%20input-type%3d%22user%22%20%2f%3e%3coperator%20logic%3d%22not-containing%22%3e%3coperator%20logic%3d%22content%22%3e%3cterm%20field%3d%22query%22%20str%3d%22term%22%20processing%3d%22strict%22%20input-type%3d%22user%22%20%2f%3e%3c%2foperator%3e%3coperator%20logic%3d%22or%22%3e%3coperator%20logic%3d%22thru%22%3e%3cterm%20field%3d%22query%22%20str%3d%22novillo%22%20processing%3d%22strict%22%20input-type%3d%22user%22%20%2f%3e%3coperator%20logic%3d%22words%22%3e%3cterm%20field%3d%22query%22%20str%3d%221%22%20processing%3d%22strict%22%20input-type%3d%22user%22%20%2f%3e%3c%2foperator%3e%3c%2foperator%3e%3coperator%20logic%3d%22thru%22%3e%3coperator%20logic%3d%22words%22%3e%3cterm%20field%3d%22query%22%20str%3d%222%22%20processing%3d%22strict%22%20input-type%3d%22user%22%20%2f%3e%3c%2foperator%3e%3cterm%20field%3d%22query%22%20phrase%3d%22phrase%22%20str%3d%22novillo%22%20processing%3d%22strict%22%20input-type%3d%22user%22%20%2f%3e%3c%2foperator%3e%3c%2foperator%3e%3c%2foperator%3e%3c%2foperator%3e%3c%2foperator%3e&amp;num-best=0&amp;binning-mode=normal&amp;force-binning=0&amp;max=30&amp;start=0&amp;num=20&amp;staging=0&amp;collection=iopro-tm-gcba-terms&amp;r-o-p=0&amp;doc-axl=%3cdocument%3e%3cattribute%20name%3d%22vse-key%22%3e%3cvalue-of%20select%3d%22vse%3adocument%28%29%2f%40vse-key%22%2f%3e%3c%2fattribute%3e%3cattribute%20name%3d%22url%22%3e%3cvalue-of%20select%3d%22vse%3adocument%28%29%2f%40url%22%2f%3e%3c%2fattribute%3e%3ccopy-of%3e%3cattribute%20name%3d%22select%22%3evse%3acontents%28%27narrower%27,%2020%29%3c%2fattribute%3e%3c%2fcopy-of%3e%3ccopy-of%3e%3cattribute%20name%3d%22select%22%3evse%3acontents%28%27broader%27,%2020%29%3c%2fattribute%3e%3c%2fcopy-of%3e%3ccopy-of%3e%3cattribute%20name%3d%22select%22%3evse%3acontents%28%27synonym%27,%2020%29%3c%2fattribute%3e%3c%2fcopy-of%3e%3ccopy-of%3e%3cattribute%20name%3d%22select%22%3evse%3acontents%28%27spelling%27,%2020%29%3c%2fattribute%3e%3c%2fcopy-of%3e%3ccopy-of%3e%3cattribute%20name%3d%22select%22%3evse%3acontents%28%27translation%27,%2020%29%3c%2fattribute%3e%3c%2fcopy-of%3e%3ccopy-of%3e%3cattribute%20name%3d%22select%22%3evse%3acontents%28%27related%27,%2020%29%3c%2fattribute%3e%3c%2fcopy-of%3e%3c%2fdocument%3e&amp;sort-keys=1&amp;shingles=1&amp;summarize=1&amp;cache=1&amp;cache-data=0&amp;score=0&amp;show-duplicates=1&amp;gen-key=0&amp;n-collapse=0&amp;collapsed-binning=0" start-time="96" end-time="143" http-status="200 OK" body-length="616" status="fetched processed parsed" /></added-source><query><op-exp logic="and"><term field="v.output-cache-data" str="true" processing="optional" input-type="system" /><op-exp logic="or" middle-string="OR" name="OR" precedence="2"><term field="query" str="novillo" position="0" processing="strict" input-type="user" /><option name="debug" value="false" /><option name="profile" value="false" /></op-exp></op-exp></query><query><operator logic="and"><term field="v.output-cache-data" str="true" processing="optional" input-type="system" /><term field="query" str="novillo" position="0" processing="strict" input-type="user" /></operator></query><query><operator logic="and"><term field="v.output-cache-data" str="true" processing="optional" input-type="system" /><term processing="strict" field="query" str="novillo" position="0" input-type="user" /></operator></query><added-source name="gcba-metadata" type="vse" test-strictly="test-strictly" modified="1495546354" over-request="1.3" num="5" status="queried" requested="5" admin-url="http://DESKTOP-5TQBKKA:9080/vivisimo/cgi-bin/admin.exe" vse-vse="vse-vse" query-xml-supported="query-xml-supported" cached="cached" stoplist="none" stem2="none" stem="depluralize" total-results-with-duplicates="1" retrieval-ms="27" search-ms="0" total-results="1" retrieved="1"><parse url="http://127.0.0.1:7205/search?query-xml=%3cterm%20processing%3d%22strict%22%20field%3d%22query%22%20str%3d%22novillo%22%20position%3d%220%22%20input-type%3d%22user%22%20%2f%3e&amp;binning-mode=normal&amp;force-binning=0&amp;max=7&amp;start=0&amp;num=5&amp;staging=0&amp;collection=gcba-metadata&amp;r-o-p=0&amp;sort-keys=1&amp;shingles=1&amp;summarize=1&amp;cache=1&amp;cache-data=1&amp;score=0&amp;show-duplicates=0&amp;gen-key=0&amp;n-collapse=0&amp;collapsed-binning=0" start-time="153" end-time="185" http-status="200 OK" body-length="43098" status="fetched processed parsed" retrieved="1" /></added-source><list start="0" per="5" num="1"><document vse-key="http://www2.cedom.gov.ar:80/es/legislacion/normas/leyes/ley4827.html#internal-key#25/" ct="text/html" ip="190.2.53.199" vertex="0" url="http://www2.cedom.gov.ar/es/legislacion/normas/leyes/ley4827.html" la-score="0.1" mwi-shingle="TQJ5ugJPrDwxjMSX9r6MmVMos2/oWTN411YJGKkLcSIrkhBl7FAdkaBRR7VnFN7wgLHZbuvT/J9q16KJymb9BHAkWKe5/qNY8b+evvvyo+y20ZWYymQhEIRNddMV7eiL" vse-base-score="1" parse-ref="0" rank="0" source="gcba-metadata" vse="vse" score="0.111111" id="Ndoc1.0"><content name="titulo" vse-streams="2" u="1" type="html" action="cluster" weight="1">Artículo 13.-</content><content name="texto" vse-streams="2" u="4" type="html" action="cluster" weight="1"> En las carnicerías, verdulerías, pescaderías, panaderías y casas de comida
+  para llevar, se deberá efectuar la exhibición de precios mediante carteleras ubicadas
+  en el interior de los locales, en forma destacada y visible, en las que se harán constar
+  los precios por unidad de venta de los cortes y clases de carnes y sus derivados,
+  clases de verduras, especies y cortes de pescados y mariscos, tipos de panes y
+  facturas y las distintas variedades de comidas preparadas, respectivamente. En el
+  caso de la carne bovina, se entenderá por clases de carne a las siguientes: ternera,
+  novillito, novillo, vaquillona y vaca, según corresponda.En los demás productos que allí
+  se comercialicen deberá estarse a lo establecido en las disposiciones generales de la
+presente Ley.</content><content name="snippet" action="cluster" type="html" weight="1"> ... clases de carne a las siguientes: ternera,
+  novillito, novillo, vaquillona y vaca, según corresponda.En los demás  ... </content><cache u="1" ct="text/html" url="http://www2.cedom.gov.ar/es/legislacion/normas/leyes/ley4827.html"><crawl-data anchor="http://www2.cedom.gov.ar/es/legislacion/normas/leyes/ley4827.html" content-type="text/html" db-row="1" db-file="C:\Program Files\IBM\WEX\Engine\data\search-collections\173\gcba-metadata\crawl1\cache.sqlt" en-original-size="40196"><text>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">&lt;HTML XMLNS="undefined">
+&lt;HEAD>
+&lt;TITLE>Ley 4827 - Exhibici&amp;oacute;n y Publicidad de Precios - Regulaci&amp;oacute;n&lt;/TITLE>
+&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+&lt;/HEAD>
+&lt;BODY bgcolor="#ffffff" marginheight="5" marginwidth="5" topmargin="0" leftmargin="5" rightmargin="5" bottommargin="10" LINK="#0000ff" VLINK="#800080">
+&lt;font FACE="Arial, Helvetica, sans-serif" size="2">
+&lt;P ALIGN="right">Buenos Aires,  05 de diciembre de 2013.-&lt;/P>
+&lt;font size="3">
+&lt;P ALIGN="center">La Legislatura de la Ciudad Aut&amp;oacute;noma   de Buenos Aires&lt;/P>
+&lt;P ALIGN="center">sanciona con fuerza de Ley&lt;/P>
+&lt;/font>
+&lt;P>&amp;nbsp;&lt;/P>
+&lt;p align="center">&lt;strong>EXHIBICION Y PUBLICIDAD DE PRECIOS EN LA CIUDAD AUTONOMA DE&lt;br>
+BUENOS AIRES&lt;/strong>&lt;/p>
+&lt;p align="center">&lt;strong>  NORMAS GENERALES&lt;/strong>&lt;/p>
+&lt;p align="justify">&lt;strong>Art&amp;iacute;culo 1&amp;ordm;.-&lt;/strong> La presente Ley tiene por objeto regular la exhibici&amp;oacute;n y publicidad
+voluntaria de precios en la Ciudad Aut&amp;oacute;noma de Buenos Aires.&lt;/p>
+&lt;p align="justify">  Quienes ofrezcan a consumidores finales bienes muebles o servicios en el &amp;aacute;mbito de
+  la Ciudad Aut&amp;oacute;noma de Buenos Aires deben exhibir precios de acuerdo a lo
+establecido por la presente y normas complementarias.&lt;/p>
+&lt;p align="justify">  Quienes voluntariamente publiciten precios de bienes muebles o servicios deben
+  hacerlo conforme a lo aqu&amp;iacute; establecido y normas complementarias.&lt;/p>
+&lt;p>  &lt;strong>EXHIBICION DE PRECIOS&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 2&amp;deg;.-&lt;/strong> El precio deber&amp;aacute; expresarse en moneda de curso legalpesos-,
+  de contado y
+  corresponder&amp;aacute; al importe total y final que deba abonar el consumidor final. En los
+  casos en que se acepten adem&amp;aacute;s otros medios o monedas de pago, tal circunstancia
+  deber&amp;aacute; indicarse claramente en los lugares de acceso al establecimiento juntamente
+  con el valor en Pesos al que ser&amp;aacute; considerado el medio de pago de que se trate, salvo
+  en el caso de que el medio de pago considerado sea una tarjeta de cr&amp;eacute;dito, d&amp;eacute;bito o
+compra, conforme lo previsto en el Art&amp;iacute;culo 37, inciso c) de la Ley 25.065.&lt;/p>
+&lt;p align="justify">  En caso de optarse por exhibir o publicitar precios en otra moneda, se podr&amp;aacute; exhibir,
+  en caracteres menos relevantes que los correspondientes a la respectiva indicaci&amp;oacute;n en
+  Pesos. Cuando se ofrezcan al p&amp;uacute;blico servicios que sean prestados desde, hacia y en
+  el exterior, se podr&amp;aacute; dar cumplimiento a lo establecido en la presente ley exhibiendo y
+  publicitando los precios en d&amp;oacute;lares estadounidenses. Si se ofrecen bienes o servicios
+  con reducci&amp;oacute;n de precio, se deber&amp;aacute; consignar en forma clara el precio anterior junto
+  con el precio rebajado. Si fuere una reducci&amp;oacute;n porcentual del precio de un conjunto de
+bienes muebles o servicios, bastar&amp;aacute; con su exhibici&amp;oacute;n gen&amp;eacute;rica.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 3&amp;deg;.-&lt;/strong> Cuando las mercader&amp;iacute;as exhibidas no se comercialicen directamente al
+  p&amp;uacute;blico, tal circunstancia deber&amp;aacute; ser informada clara e inequ&amp;iacute;vocamente mediante
+  carteles indicadores.&lt;/p>
+&lt;p align="justify">&lt;strong>Art&amp;iacute;culo 4&amp;deg;.-&lt;/strong>  La exhibici&amp;oacute;n de los precios deber&amp;aacute; efectuarse por unidad, en forma clara,
+  visible, horizontal y legible. Cuando se realice mediante listas, &amp;eacute;stas deber&amp;aacute;n
+  exponerse en los lugares de acceso a la vista del p&amp;uacute;blico, y en los lugares de venta o
+  atenci&amp;oacute;n a disposici&amp;oacute;n del mismo. En ning&amp;uacute;n caso se impedir&amp;aacute; el acceso de los
+  consumidores a los precios exhibidos, previo a la decisi&amp;oacute;n de compra de los bienes
+comercializados.&lt;/p>
+&lt;p align="justify">&lt;strong>&lt;em>(Conforme texto Art. 1&amp;ordm; de la Ley N&amp;ordm; 5.297, BOCBA N&amp;deg; 4686 del 24/07/2015)&lt;/em>&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 5&amp;deg;.-&lt;/strong> En el caso de bienes muebles, la exhibici&amp;oacute;n se har&amp;aacute; sobre cada objeto,
+  art&amp;iacute;culo, producto o grupo o conjunto de una misma mercader&amp;iacute;a que se encuentre
+  expuesto a la vista del p&amp;uacute;blico. Cuando por la naturaleza o ubicaci&amp;oacute;n de los bienes no
+  sea posible, deber&amp;aacute; utilizarse lista de precios.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 6&amp;deg;.-&lt;/strong> En el caso de los servicios, los precios deber&amp;aacute;n exhibirse mediante listas
+  colocadas en lugares que permitan una clara visualizaci&amp;oacute;n por parte de los
+  consumidores, con anterioridad a la compra o contrataci&amp;oacute;n de los mismos.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 7&amp;ordm;.-&lt;/strong> Cuando los precios se exhiban financiados deber&amp;aacute; indicarse el precio de
+  contado en dinero efectivo, el precio total financiado, el anticipo si lo hubiere, la
+  cantidad y monto de las cuotas, y la tasa de inter&amp;eacute;s efectiva anual aplicada, calculada
+  sobre el precio de contado en dinero efectivo. Si la financiaci&amp;oacute;n ofrecida no es
+  otorgada por el oferente del bien o servicio, se deber&amp;aacute; informar claramente, tanto en la
+  exhibici&amp;oacute;n como en la publicidad, el nombre de la entidad responsable de la misma.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 8&amp;deg;.-&lt;/strong> Cuando la financiaci&amp;oacute;n ofrecida corresponda a un sistema de ahorro previo,
+  adem&amp;aacute;s de cumplir con las prescripciones del art&amp;iacute;culo 7&amp;deg;, deber&amp;aacute; anunciarse o
+exhibirse de tal manera que se identifique dicha circunstancia inequ&amp;iacute;vocamente.&lt;/p>
+&lt;p align="justify">  Asimismo los precios financiados a anunciarse o exhibirse corresponder&amp;aacute;n a los que
+  deba abonar el suscriptor, debiendo informar adem&amp;aacute;s sobre todo otro adicional
+  inherente al sistema, tales como gastos administrativos, sellados, impuestos, seguros,
+  fletes y similares&lt;/p>
+&lt;p>  &lt;strong>EXHIBICION DE PRECIOS EN SUPERMERCADOS Y AUTOSERVICIOS&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 9&amp;deg;.-&lt;/strong> Los Supermercados, Supermercados Totales o Hipermercados, y
+  Autoservicios de bienes consumibles y no consumibles, conforme los define la Ley N&amp;ordm;
+  18.425 ubicados en el &amp;aacute;mbito de la Ciudad Aut&amp;oacute;noma de Buenos Aires y las formas o
+  variantes que pudieran adquirir dichos establecimientos, deben:&lt;/p>
+&lt;ol type="a">
+  &lt;li> Exhibir precios de manera clara, visible y legible sobre cada art&amp;iacute;culo, producto o
+    grupo de una misma mercader&amp;iacute;a que se encuentre expuesto a la vista del p&amp;uacute;blico. El
+    precio exhibido deber&amp;aacute; corresponder al importe total que deba abonar el consumidor
+    final. Cuando por la naturaleza o ubicaci&amp;oacute;n de los bienes no fuera posible, deber&amp;aacute;n
+    utilizarse listas de precios. En los casos en que la exhibici&amp;oacute;n deba realizarse mediante
+    listas, la existencia de las mismas deber&amp;aacute; informarse en el lugar donde los productos
+    se encuentren exhibidos, mediante un cartel que consigne: &amp;ldquo;lista de precios a
+  disposici&amp;oacute;n del p&amp;uacute;blico ubicada en...&amp;ldquo;&lt;/li>
+  &lt;li> Indicar en los r&amp;oacute;tulos de los productos de venta al peso envasados, adem&amp;aacute;s del
+    precio de la fracci&amp;oacute;n ofrecida, su cantidad neta, marca y el precio por unidad de
+    medida correspondiente. Se entender&amp;aacute; por &amp;ldquo;precio de venta por unidad de medida&amp;ldquo; al
+    precio final que efectivamente debiera pagar el consumidor por un Kilogramo, un Litro,
+    un Metro, un Metro C&amp;uacute;bico del producto o una sola unidad de la magnitud que se
+    utilice en forma generalizada y habitual en la comercializaci&amp;oacute;n de productos
+    espec&amp;iacute;ficos. En el caso de presentaciones cuyo contenido no supere los 250 gramos,
+    mililitros, la referencia al precio por unidad de medida deber&amp;aacute; hacerse a los 100
+  gramos o mililitros.&lt;/li>
+  &lt;li> Exhibir carteles indicadores al ingreso de los establecimientos, en los que constar&amp;aacute;
+    la nomina de asociaciones de consumidores inscriptas en el Registro de la Ciudad,
+    con sus tel&amp;eacute;fonos y domicilios; el domicilio y tel&amp;eacute;fono de la autoridad de aplicaci&amp;oacute;n; los
+    responsables de la empresa frente a quienes pueden formularse denuncias, reclamos
+    o sugerencias atinentes a los productos comercializados y de la atenci&amp;oacute;n al cliente. El
+    cartel deber&amp;aacute; confeccionarse en base a la forma y condiciones que disponga la
+    Direcci&amp;oacute;n General de Defensa y Protecci&amp;oacute;n del Consumidor. La n&amp;oacute;mina de las
+    asociaciones de consumidores, corresponder&amp;aacute; a la que disponga y notifique la
+    Direcci&amp;oacute;n General de Defensa y Protecci&amp;oacute;n del Consumidor de la Ciudad de Buenos Aires, la misma ser&amp;aacute; actualizada por ese Organismo, cada a&amp;ntilde;o y los Supermercados,
+    Supermercados totales o hipermercados y autoservicio deber&amp;aacute;n exhibir la n&amp;oacute;mina
+  actualizada.&lt;/li>
+  &lt;li> Abstenerse de realizar cualquier conducta que impida o menoscabe la libertad de
+  los consumidores a tomar nota de los precios exhibidos.&lt;/li>
+  &lt;li> Actualizar permanentemente la publicidad gr&amp;aacute;fica, en Internet u otro medio de
+    difusi&amp;oacute;n, relativa a los precios a fin de que &amp;eacute;stos coincidan con los exhibidos en las
+  g&amp;oacute;ndolas.&lt;/li>
+  &lt;li> En los casos en que se haya agotado el stock de los productos ofertados, informar
+    en la g&amp;oacute;ndola de exhibici&amp;oacute;n del mismo y al ingreso del establecimiento. Las
+    publicaciones que oferten bienes o servicios deber&amp;aacute;n informar el tiempo de validez de
+    la misma y el stock disponible. Si la oferta se realiza en varias sucursales deber&amp;aacute;
+    indicarse el stock disponible para cada una de ellas. Si estando vigente la oferta el
+    stock se agotase, deber&amp;aacute; informarse tal situaci&amp;oacute;n en el ingreso al establecimiento y en
+    la g&amp;oacute;ndola en donde el producto o servicio originariamente fuera exhibido. Asimismo
+  deber&amp;aacute; cesar todo tipo de publicidad.&lt;/li>
+  &lt;li> Exhibir al ingreso de los establecimientos, el listado de precios, sobre cada art&amp;iacute;culo,
+    producto o grupo de una misma mercader&amp;iacute;a, sin considerar los productos en oferta,
+    que conforma la canasta b&amp;aacute;sica alimentaria publicada por el Instituto Nacional de
+    Estad&amp;iacute;sticas y Censo (INDEC). Este listado debe ser exhibido de manera clara, visible
+    y legible y actualizado permanentemente a fin que los precios coincidan con los
+  exhibidos en las g&amp;oacute;ndolas.&lt;/li>
+  &lt;li> Exhibir la variaci&amp;oacute;n porcentual de los precios de cada art&amp;iacute;culo, producto o grupo de
+    una misma mercader&amp;iacute;a que se encuentre expuesto a la vista del p&amp;uacute;blico, respecto del
+    comienzo del a&amp;ntilde;o y del mes en curso. Junto al precio vigente al que se refiere el inciso
+    a) del presente art&amp;iacute;culo, se consignar&amp;aacute; el precio correspondiente al d&amp;iacute;a primero (1&amp;deg;) de
+    enero del a&amp;ntilde;o en curso y del mes en curso, y la variaci&amp;oacute;n porcentual existente entre
+    ambos precios (primero del a&amp;ntilde;o, primero del mes actual y vigente).&lt;br>
+    Cl&amp;aacute;usula Transitoria: mientras est&amp;eacute;n vigentes los acuerdos de precios celebrados por
+    el Gobierno Nacional, se deber&amp;aacute; indicar esta situaci&amp;oacute;n en los productos incluidos en
+  dichos convenios con el fin de verificar el cumplimiento de los mismos.&lt;/li>
+  &lt;li> Abstenerse de realizar cualquier diferenciaci&amp;oacute;n de precios entre productos que est&amp;eacute;n
+    ubicados dentro o fuera de heladeras exhibidoras que se encuentren en los
+  establecimientos y al alcance de los consumidores&lt;/li>
+&lt;/ol>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 10.-&lt;/strong> Las carnicer&amp;iacute;as, pescader&amp;iacute;as, verduler&amp;iacute;as, panader&amp;iacute;as y casas de comidas
+  para llevar que funcionan en los establecimientos comerciales aludidos en el art&amp;iacute;culo
+  9&amp;ordf; deber&amp;aacute;n exhibir mediante carteleras de forma destacada y legible, por unidad de
+  venta y de peso, de los cortes y tipos de carne, especies de pescado y mariscos,
+  variedades de panes y productos de confiter&amp;iacute;as, variedades de comidas preparadas y
+  productos de fiambrer&amp;iacute;as.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 11.-&lt;/strong> La autoridad de aplicaci&amp;oacute;n determinar&amp;aacute; qu&amp;eacute; establecimientos deber&amp;aacute;n instalar
+  lectoras de c&amp;oacute;digo de barras y balanzas a fin de informar a los consumidores acerca
+  del precio, marca, cantidad y peso de los productos. La existencia de aqu&amp;eacute;llas, ser&amp;aacute;
+  puesta en conocimiento de los consumidores mediante adecuada informaci&amp;oacute;n y
+se&amp;ntilde;alizaci&amp;oacute;n gr&amp;aacute;fica.&lt;/p>
+&lt;p align="justify">  En las ferias, mercados y establecimientos comerciales minoristas en los que se
+  expendan productos al peso ser&amp;aacute; obligatorio el uso de balanzas electr&amp;oacute;nicas que
+  emitan tickets de papel o adhesivos, conteniendo el nombre del producto, precio por
+  unidad de medida, peso y precio final a pagar por el consumidor, fecha y horario de
+  emisi&amp;oacute;n. (conforme lo normado por art&amp;iacute;culo 7.2.1. del C&amp;oacute;digo de Habilitaciones y
+  Verificaciones, modificado por Ley 4596&lt;/p>
+&lt;p align="justify">&lt;strong>Art&amp;iacute;culo 12.-&lt;/strong> Los supermercados totales y supermercados, seg&amp;uacute;n Ley N&amp;ordm; 18.425, quedan
+  obligados a contar dentro del sal&amp;oacute;n de ventas con alg&amp;uacute;n mecanismo que facilite el
+  inmediato acceso de los consumidores a la informaci&amp;oacute;n sobre el precio, marca y
+  cantidad del producto consultado. Dichos mecanismos deber&amp;aacute;n estar dispuestos de
+  modo tal que ning&amp;uacute;n consumidor deba desplazarse, desde cualquier punto del sal&amp;oacute;n,
+  m&amp;aacute;s de veinte metros para acceder a los mismos. La existencia de dichos mecanismos
+  no exime a dichos establecimientos de dar cumplimiento a los art&amp;iacute;culos anteriores. Se
+entender&amp;aacute; como forma accesoria o complementaria y nunca supletoria.&lt;/p>
+&lt;p>  &lt;strong>EXHIBICION DE PRECIOS EN CARNICERIAS, VERDULERIAS PESCADERIAS,
+  PANADERIAS Y CASAS DE COMIDA PARA LLEVAR&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 13.-&lt;/strong> En las carnicer&amp;iacute;as, verduler&amp;iacute;as, pescader&amp;iacute;as, panader&amp;iacute;as y casas de comida
+  para llevar, se deber&amp;aacute; efectuar la exhibici&amp;oacute;n de precios mediante carteleras ubicadas
+  en el interior de los locales, en forma destacada y visible, en las que se har&amp;aacute;n constar
+  los precios por unidad de venta de los cortes y clases de carnes y sus derivados,
+  clases de verduras, especies y cortes de pescados y mariscos, tipos de panes y
+  facturas y las distintas variedades de comidas preparadas, respectivamente. En el
+  caso de la carne bovina, se entender&amp;aacute; por clases de carne a las siguientes: ternera,
+  novillito, novillo, vaquillona y vaca, seg&amp;uacute;n corresponda.En los dem&amp;aacute;s productos que all&amp;iacute;
+  se comercialicen deber&amp;aacute; estarse a lo establecido en las disposiciones generales de la
+presente Ley.&lt;/p>
+&lt;p>  &lt;strong>EXHIBICION DE PRECIOS EN FARMACIAS&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 14.-&lt;/strong> Los responsables de farmacias y farmacias mutuales deber&amp;aacute;n tener a
+  disposici&amp;oacute;n del p&amp;uacute;blico la lista de precios actualizados de todas las especialidades
+  medicinales de uso y aplicaci&amp;oacute;n en medicina humana que comercialicen.&lt;/p>
+&lt;p align="justify">  Asimismo estos establecimientos deber&amp;aacute;n tener a disposici&amp;oacute;n del p&amp;uacute;blico un listado de
+  los descuentos y beneficios establecidos en favor de sus afiliados por las Obras
+  Sociales, Sistemas de medicina Prepaga, Sanatorios, Hospitales Privados, Cl&amp;iacute;nicas y
+  similares. En todos los casos deber&amp;aacute;n exhibir en lugar destacado y con caracteres
+  visibles un cartel con la leyenda &amp;ldquo;LISTA DE PRECIOS Y DESCUENTOS A
+  DISPOSICION DEL PUBLICO&amp;ldquo;.&lt;/p>
+&lt;p align="justify">  Todo establecimiento dedicado al rubro farmacia debe exhibir en su vidriera y/o en el
+  mostrador de atenci&amp;oacute;n al p&amp;uacute;blico un cartel visible que indique si all&amp;iacute; se controla o no la
+  presi&amp;oacute;n arterial en forma manual.&lt;/p>
+&lt;p align="justify">  En caso afirmativo deben precisarse los d&amp;iacute;as, horarios y costo del citado servicio.&lt;/p>
+&lt;p>  &lt;strong>EXHIBICION DE PRECIOS EN GARAJES Y PLAYAS DE ESTACIONAMIENTO&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 15.-&lt;/strong> En los garajes o playas de estacionamiento se debe efectuar la exhibici&amp;oacute;n de
+  precios mediante listas ubicadas en las entradas o lugares de acceso, en forma
+  destacada y claramente visible desde el interior de los veh&amp;iacute;culos que se encuentren en
+  la calzada, donde se har&amp;aacute;n constar las caracter&amp;iacute;sticas y modalidades del servicio que
+  se presta, especificando: el precio por d&amp;iacute;a, hora o fracci&amp;oacute;n, de acuerdo con el tipo y
+  tama&amp;ntilde;o de cada unidad (chico, mediano o grande).&lt;/p>
+&lt;p align="justify">  En los establecimientos que presten servicio de estacionamiento, ya sea por hora o
+  por la modalidad de estad&amp;iacute;a, por per&amp;iacute;odos no mayores de 24 horas, ser&amp;aacute; obligatorio
+  fijar una tarifa que corresponda al tiempo horario en que el usuario utiliza el servicio
+  prestado y de acuerdo con las pautas que establece el presente art&amp;iacute;culo.&lt;/p>
+&lt;p align="justify">  Para la fijaci&amp;oacute;n de la tarifa se tomar&amp;aacute; en consideraci&amp;oacute;n el tama&amp;ntilde;o del veh&amp;iacute;culo.&lt;/p>
+&lt;ol type="a">
+  &lt;li> Se fijar&amp;aacute; la tarifa por estad&amp;iacute;a diaria completa de acuerdo con el horario de atenci&amp;oacute;n
+    al p&amp;uacute;blico. Sobre el monto de la tarifa, razonablemente, se fijar&amp;aacute; un precio para
+    per&amp;iacute;odos menores u ocupaci&amp;oacute;n que se computa por el tiempo horario y/o sus
+  fracciones.&lt;/li>
+  &lt;li>La primera hora de ocupaci&amp;oacute;n se cobrar&amp;aacute; completa. Pasada la primera hora, se
+  computaran as fracciones en lapsos no superiores a 5 minutos, cuya tarifa en ning&amp;uacute;n
+  caso podr&amp;aacute; superar la doceava parte del precio por hora de estacionamiento. &lt;strong>&lt;em>(Conforme texto Art. 1&amp;ordm; de la Ley N&amp;ordm; 5.114, BOCBA N&amp;ordm; 4540 del 11/12/2014) &lt;/em>&lt;/strong>&lt;/li>
+  &lt;li> El per&amp;iacute;odo de tiempo a cobrar por el responsable del estacionamiento resultar&amp;aacute; de
+    las impresiones efectuadas mediante el uso de computadoras y/u otros sistemas
+    similares, o anotaciones manuales, insertadas en las correspondientes tarjetas de
+    estacionamiento, constando el horario de ingreso y egreso del veh&amp;iacute;culo. Si el usuario
+    as&amp;iacute; lo requiriese, se har&amp;aacute; constar en el comprobante respectivo el n&amp;uacute;mero de dominio
+  del veh&amp;iacute;culo.&lt;/li>
+  &lt;li> En caso de p&amp;eacute;rdida del ticket o tal&amp;oacute;n de estacionamiento por parte del usuario, el
+    responsable del estacionamiento est&amp;aacute; obligado a consultar sus registros para
+    determinar de manera fehaciente el tiempo transcurrido desde el comienzo del uso del
+    servicio a los efectos de hacer efectivo el cobro por tal concepto, no pudiendo obligar
+    al usuario a abonar una suma mayor. Ante el extrav&amp;iacute;o del ticket, el responsable del
+  establecimiento constatar&amp;aacute; la identidad del usuario y el dominio del veh&amp;iacute;culo.&lt;/li>
+  &lt;li> El usuario podr&amp;aacute; pagar la tarifa conforme a lo establecido por la estad&amp;iacute;a completa, o
+  al c&amp;oacute;mputo horario, no pudiendo en ning&amp;uacute;n caso exig&amp;iacute;rsele el pago por adelantado.&lt;/li>
+  &lt;li> En todos los locales dedicados al estacionamiento a que se refiere ese art&amp;iacute;culo,
+    deber&amp;aacute; exhibirse en un lugar visible por el conductor antes de su ingreso:&lt;br>
+	&lt;ol>
+   &lt;li>  D&amp;iacute;as y horarios de atenci&amp;oacute;n y la tarifa que se percibe, debidamente discriminada
+    por el tiempo, estad&amp;iacute;a diaria completa y tama&amp;ntilde;o de veh&amp;iacute;culo.&lt;/li>
+   &lt;li>  El tel&amp;eacute;fono de denuncia gratuito que dispone la autoridad de aplicaci&amp;oacute;n de la
+    presente Ley.&lt;/li>
+   &lt;li>La leyenda &amp;ldquo;se permite el ingreso de motocicletas y
+  bicicletas (art. 4.17.6 de la Ordenanza N&amp;deg; 33.266 y Ordenanza N&amp;deg; 44.365)&amp;ldquo; y las tarifas
+correspondientes al estacionamiento de bicicletas. &lt;strong>&lt;em>(Conforme texto Art. 2&amp;ordm; de la Ley N&amp;ordm; 5.018, BOCBA N&amp;deg; 4453 del 06/08/2014)&lt;/em>&lt;/strong>&lt;/li>
+   &lt;li> El texto &amp;iacute;ntegro del presente art&amp;iacute;culo, precedido por la siguiente frase: &amp;ldquo;Sr. Cliente
+  conozca sus derechos sobre Tarifas de Estacionamiento&amp;ldquo;.&lt;/li>
+	&lt;/ol>
+  &lt;/li>
+  &lt;li>En el caso de bicicletas ser&amp;aacute; obligatorio fijar dos categor&amp;iacute;as
+  de tarifas: a) una por hora que no podr&amp;aacute; superar el 10% de la tarifa fijada para
+  autom&amp;oacute;viles para la misma modalidad de permanencia; y b) otra por estad&amp;iacute;a diaria
+  completa que no podr&amp;aacute; superar el precio equivalente a la tarifa m&amp;iacute;nima de dos boletos
+  de transporte colectivo interurbano con subsidio. En el caso de que el criterio fijado por
+  hora cueste m&amp;aacute;s que la tarifa m&amp;iacute;nima de dos boletos de transporte colectivo
+interurbano mencionado, se aplicar&amp;aacute; la de menor valor. &lt;strong>&lt;em>(Incorporado por el Art. 1&amp;ordm; de la Ley N&amp;ordm; 5.018, BOCBA N&amp;deg; 4453 del 06/08/2014)&lt;/em>&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Art&amp;iacute;culo 15 Bis:&lt;/strong> El/la titular o responsable de un
+  establecimiento en el cual se cobre una tarifa superior a la habitual en ocasi&amp;oacute;n de
+  realizarse alg&amp;uacute;n espect&amp;aacute;culo o evento de concurrencia masiva en sus proximidades,
+ser&amp;aacute; sancionado/a con una multa de 10000 a 50000 unidades fijas.&lt;/p>
+&lt;p>&lt;em>&lt;strong>(Incorporado por el Art. 1&amp;ordm; de la Ley N&amp;ordm; 5.112, BOCBA N&amp;ordm; 4538 del 09/12/2014) &lt;/strong>&lt;/em>&lt;/p>
+&lt;p align="justify">  &lt;strong>EXHIBICION DE PRECIOS EN AUTOPISTAS&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 16.-&lt;/strong> En todas aquellas autopistas u otras v&amp;iacute;as de comunicaci&amp;oacute;n terrestres locales,
+  sometidas al r&amp;eacute;gimen de peaje, se deber&amp;aacute; exhibir el precio correspondiente a la
+  utilizaci&amp;oacute;n del tramo inmediato de acuerdo a la categor&amp;iacute;a de veh&amp;iacute;culo de que se trate,
+en las respectivas cabinas de cobro de peaje.&lt;/p>
+&lt;p align="justify">  La misma indicaci&amp;oacute;n deber&amp;aacute; efectuarse, adem&amp;aacute;s, en el punto del tramo en cuesti&amp;oacute;n en
+  que el conductor se halle en condiciones de ejercer su opci&amp;oacute;n de circular por un
+  camino alternativo, de manera que resulte claramente visible desde el veh&amp;iacute;culo.&lt;/p>
+&lt;p align="justify">  &lt;strong>EXHIBICION DE PRECIOS EN COMBUSTIBLES&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 17.-&lt;/strong> Quienes comercialicen directamente a consumidores finales combustibles
+  para veh&amp;iacute;culos autopropulsados, deber&amp;aacute;n exhibir sus precios en moneda de curso
+  legal-pesos- por litro o metro c&amp;uacute;bico, seg&amp;uacute;n se trate de l&amp;iacute;quidos o gases. La
+  informaci&amp;oacute;n mencionada deber&amp;aacute; ser exhibida durante la totalidad del horario de
+  atenci&amp;oacute;n en forma tal que desde las calzadas de cada uno de sus accesos resulte
+  claramente visible, de modo que permita al consumidor ejercer la opci&amp;oacute;n de ingreso al
+  lugar de expendio.&lt;/p>
+&lt;p align="justify">  La obligaci&amp;oacute;n mencionada deber&amp;aacute; ser cumplida en forma an&amp;aacute;loga por quienes ofrezcan
+  los productos citados en establecimientos instalados en las m&amp;aacute;rgenes de v&amp;iacute;as
+  navegables o pistas de aviaci&amp;oacute;n.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 18.-&lt;/strong> Quienes comercialicen directamente al p&amp;uacute;blico gas licuado de petr&amp;oacute;leo en
+  envases de cualquier capacidad deber&amp;aacute;n exhibir, mediante carteles ubicados en el
+  interior de los comercios, en forma destacada y visible, los precios del mismo seg&amp;uacute;n
+  las capacidades de los envases que comercializan.&lt;/p>
+&lt;p align="justify">&lt;strong>Art&amp;iacute;culo 19.-&lt;/strong>  Los surtidores de naftas de todas las
+bocas de expendio que operan en la Ciudad Autonoma de Buenos Aires, deber&amp;aacute;n tener en forma bien visible una leyenda con la indicaci&amp;oacute;n de n&amp;uacute;mero de octanos del
+  combustible que se expenda. La presentaci&amp;oacute;n de dicha leyenda no deber&amp;aacute; inducir a
+  error, enga&amp;ntilde;o o confusi&amp;oacute;n al consumidor respecto de la naturaleza, propiedades,
+caracter&amp;iacute;sticas y precio del combustible ofertado.&lt;/p>
+&lt;p align="justify">&lt;em>&lt;strong>(Conforme texto Art. 1&amp;ordm; de la Ley N&amp;ordm; 5.019, BOCBA N&amp;deg; 4453 del 06/08/2014)&lt;/strong>&lt;/em>&lt;/p>
+&lt;p align="justify">  &lt;strong>EXHIBICION DE PRECIOS EN HOTELES Y HOSPEDAJES&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 20.-&lt;/strong> Los establecimientos de alojamiento tur&amp;iacute;stico (conforme definici&amp;oacute;n de la Ley
+  4631) deber&amp;aacute;n exhibir en forma destacada a la vista del p&amp;uacute;blico el o los importes de la
+  tarifa diaria conjuntamente con la descripci&amp;oacute;n de los servicios que esta incluye.&lt;/p>
+&lt;p align="justify">  Asimismo, aquellos que ofrezcan servicios no incluidos en la mencionada tarifa diaria,
+  deber&amp;aacute;n exhibir en forma destacada o poner a disposici&amp;oacute;n de los pasajeros en el lugar
+  que corresponda, una lista con el detalle de todos los servicios opcionales, incluyendo
+  el importe de estos de acuerdo a la modalidad de su uso. Las comunicaciones
+  telef&amp;oacute;nicas estar&amp;aacute;n comprendidas dentro de los servicios opcionales y, al respecto, los
+  pasajeros deber&amp;aacute;n ser informados con precisi&amp;oacute;n en lugar visible y destacado acerca
+  del porcentaje de recargo que efect&amp;uacute;e el establecimiento sobre el importe total de las
+tarifas que facturan las compa&amp;ntilde;&amp;iacute;as prestadoras del servicio.&lt;/p>
+&lt;p align="justify">&lt;strong>EXHIBICION DE PRECIOS EN ESTABLECIMIENTOS DEL RAMO
+GASTRONOMICO&lt;/strong>&lt;/p>
+&lt;p align="justify"> &lt;strong>Art&amp;iacute;culo 21.-&lt;/strong> En los establecimientos del ramo gastron&amp;oacute;mico, en todas sus
+  especialidades, incluidos bares y confiter&amp;iacute;as, se deber&amp;aacute; efectuar la exhibici&amp;oacute;n de
+  precios en moneda de curso legal -pesos- mediante listas ubicadas en los lugares de
+  acceso y en el interior del local, pudiendo efectuarse en este &amp;uacute;ltimo caso por medio de
+  listas individuales que se entregar&amp;aacute;n a cada cliente. En caso de efectuarse exhibici&amp;oacute;n
+  de precios en otra moneda, se podr&amp;aacute; exhibir, en caracteres menos relevantes que los
+correspondientes a la respectiva indicaci&amp;oacute;n en Pesos.&lt;/p>
+&lt;p align="justify">  Las variaciones de precios, cualquiera sea el motivo que las origine (por ejemplo:
+  lugar, horario, espect&amp;aacute;culo), deber&amp;aacute;n hacerse conocer en forma destacada en todos
+los listados.&lt;/p>
+&lt;p align="justify">  Los comercios comprendidos en la A.D. 700.10, par&amp;aacute;grafo 4.4.2 del C&amp;oacute;digo de
+  Habilitaciones y Verificaciones informar&amp;aacute;n sobre la existencia o no de Servicio de
+  Mesa, Cubierto o similar. Dicha informaci&amp;oacute;n deber&amp;aacute; exhibirse, mediante la colocaci&amp;oacute;n
+  de un cartel visible en la entrada del establecimiento y en la carta del men&amp;uacute;. En caso
+  de la existencia del mismo, deber&amp;aacute; constar su costo, los productos que incluye y la
+  informaci&amp;oacute;n de la prohibici&amp;oacute;n de su cobro para menores de 12 a&amp;ntilde;os de edad, seg&amp;uacute;n lo
+establecido por la Ley 4407.&lt;/p>
+&lt;p align="justify">&lt;em>&lt;strong>(Conforme texto Art. 1&amp;ordm; de la Ley N&amp;ordm; 5.604, BOCBA N&amp;deg; 4959 del 06/09/2016)&lt;/strong>&lt;/em>&lt;/p>
+&lt;p align="justify">  &lt;strong>PUBLICIDAD VOLUNTARIA DE PRECIOS&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 22.-&lt;/strong> Cuando se publiciten voluntariamente precios de bienes, muebles o servicios,
+  deber&amp;aacute; hacerse de acuerdo con lo establecido en los Art&amp;iacute;culos 4&amp;ordm; y concordantes de la
+  presente ley, especificando adem&amp;aacute;s junto al bien publicitado el pa&amp;iacute;s de origen del bien,
+  debiendo precisar, en cada pieza publicitaria, la ubicaci&amp;oacute;n y el alcance de los servicios
+  cuando corresponda, como as&amp;iacute; tambi&amp;eacute;n la raz&amp;oacute;n social del oferente y su domicilio en el
+  pa&amp;iacute;s, o la indicaci&amp;oacute;n expresa de tal circunstancia cuando no la hubiere.&lt;/p>
+&lt;p align="justify">  En todos los casos, la informaci&amp;oacute;n deber&amp;aacute; exhibirse en caracteres tipogr&amp;aacute;ficos legibles,
+  de buen realce, destaque y visibilidad.&lt;/p>
+&lt;p align="justify">  Quienes publiciten bienes muebles o servicios con reducci&amp;oacute;n de precio deber&amp;aacute;n
+  consignar en forma clara el precio anterior del producto o servicio junto con el precio
+  rebajado.&lt;/p>
+&lt;p align="justify">  Cuando se trate de una reducci&amp;oacute;n porcentual del precio de un conjunto de bienes
+  muebles o servicios, bastar&amp;aacute; con su indicaci&amp;oacute;n gen&amp;eacute;rica sin necesidad de que conste
+  individualmente en cada art&amp;iacute;culo o servicio rebajado.&lt;/p>
+&lt;p align="justify">  Quienes publiciten bienes y/o servicios deber&amp;aacute;n hacer constar la informaci&amp;oacute;n exigida
+  por las normas legales vigentes respetando las condiciones y modalidades
+  establecidas por la presente Ley.&lt;/p>
+&lt;p align="justify">&lt;strong>TIPOGRAFIA EN PUBLICIDADES VOLUNTARIAS DE PRECIOS&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 23.-&lt;/strong> En todo anuncio publicitario de precios de bienes y/o servicios, que se
+  desarrolle y se perciba en el espacio p&amp;uacute;blico cualquiera sea el sistema utilizado para la
+  transmisi&amp;oacute;n del mensaje y las condiciones de colocaci&amp;oacute;n, conservaci&amp;oacute;n y retiro de
+  instalaciones y/o elementos publicitarios mediante los cuales se desarrolla y
+  materializa la actividad objeto de la presente Ley, deber&amp;aacute; constar la informaci&amp;oacute;n
+  exigida por las normas legales vigentes, tanto locales como federales, respetando las
+  condiciones y modalidades. Estos requisitos deber&amp;aacute;n hacerse extensivos a toda
+  informaci&amp;oacute;n de cuya omisi&amp;oacute;n resulte que el mensaje publicitario de que se trate, pueda
+  inducir a error, enga&amp;ntilde;o o confusi&amp;oacute;n acerca de sus destinatarios, de las caracter&amp;iacute;sticas,
+  precio o condiciones de comercializaci&amp;oacute;n de los bienes o servicios ofrecidos.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 24.-&lt;/strong> En toda publicidad voluntaria de precios de bienes y/o servicios exhibida en la
+  v&amp;iacute;a p&amp;uacute;blica, la tipograf&amp;iacute;a de las leyendas determinadas en el art&amp;iacute;culo anterior deber&amp;aacute;
+  ocupar, como m&amp;iacute;nimo, el 2% de la altura de la pieza publicitaria. Las leyendas aludidas
+  deber&amp;aacute;n tener un sentido de escritura id&amp;eacute;ntico y contraste de colores equivalente al de
+  la menci&amp;oacute;n del bien o servicio ofrecido y tipo de letra f&amp;aacute;cilmente legible.&lt;/p>
+&lt;p align="justify">  &lt;strong>PUBLICIDAD VOLUNTARIA DE PRECIOS SUGERIDOS&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 25.-&lt;/strong> En toda publicidad voluntaria de precios de bienes dirigidas a consumidores
+  finales que se difundan en la v&amp;iacute;a p&amp;uacute;blica de la Ciudad Aut&amp;oacute;noma de Buenos Aires, en
+  donde se indique la expresi&amp;oacute;n &amp;quot;precio sugerido&amp;quot; o frase de similar significado, se
+  deber&amp;aacute; indicar al pie de la pieza publicitaria:&lt;/p>
+&lt;ol type="a">
+  &lt;li> La vigencia territorial y temporal del precio anunciado.&lt;/li>
+  &lt;li> La identificaci&amp;oacute;n de los lugares espec&amp;iacute;ficos, d&amp;oacute;nde se pueden adquirir los bienes a
+    ese precio.&lt;/li>
+  &lt;li> Una l&amp;iacute;nea telef&amp;oacute;nica gratuita y/o p&amp;aacute;gina web donde obtener informaci&amp;oacute;n espec&amp;iacute;fica
+    sobre la ubicaci&amp;oacute;n de los mismos.&lt;br>
+    d.&lt;/li>
+&lt;/ol>
+&lt;p align="justify">
+  &lt;strong>PUBLICIDAD VOLUNTARIA DE PRECIOS DE SERVICIO TURISTICO&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 26.-&lt;/strong> Las precisiones formuladas en las publicidades voluntarias de precios de
+turismo se tienen por incluidas en el contrato espec&amp;iacute;fico con el usuario.&lt;/p>
+&lt;p align="justify">  Siempre que se publiciten ofertas deber&amp;aacute; informarse fecha de vigencia temporal y
+  territorial de las mismas.&lt;/p>
+&lt;p align="justify">  En caso de existir limitaciones cuantitativas deber&amp;aacute; informarse fehacientemente el
+  cupo o stock. Si se utilizan im&amp;aacute;genes que exhiban atractivos tur&amp;iacute;sticos, deber&amp;aacute; figurar
+  la denominaci&amp;oacute;n del atractivo y de la localidad reproducida, seguida de la provincia a la
+que pertenece, conforme lo normado por la Ley Nacional N&amp;ordm; 26.104.&lt;/p>
+&lt;p align="justify">  En todo anuncio publicitario, independientemente de lo exigido por normativa del
+  sector de turismo, se deber&amp;aacute; informar en forma clara la raz&amp;oacute;n social del Proveedor, su
+  n&amp;uacute;mero de CUIT y su domicilio en el pa&amp;iacute;s, siendo opcional la menci&amp;oacute;n de su nombre
+de fantas&amp;iacute;a.&lt;/p>
+&lt;p align="justify">  &lt;strong>PUBLICIDAD VOLUNTARIA DE PRECIOS DE PROMOCIONES DIRIGIDAS A NI&amp;Ntilde;AS
+  NI&amp;Ntilde;OS O ADOLESCENTES&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 27.-&lt;/strong> Queda prohibido en toda la v&amp;iacute;a p&amp;uacute;blica de la Ciudad Aut&amp;oacute;noma de Buenos
+  Aires efectuar publicidades voluntarias de precios, de promociones, descuentos,
+  entrega de regalos o sorteos, atados a la compra de alimentos procesados de elevado
+  contenido en sodio, az&amp;uacute;car o grasas saturadas, cuando dichos mensajes publicitarios
+est&amp;eacute;n dirigidos a ni&amp;ntilde;as, ni&amp;ntilde;os y adolescentes.&lt;/p>
+&lt;p align="justify">  Se considera que una publicidad est&amp;aacute; dirigida a ni&amp;ntilde;os, ni&amp;ntilde;as y adolescentes, cuando el
+  mensaje publicitario resulta objetiva y mayoritariamente apto para captar la atenci&amp;oacute;n o
+  inter&amp;eacute;s de esa franja etaria.&lt;/p>
+&lt;p align="justify">  A los efectos de esta Ley, se consideran alimentos procesados, aquellos frutos o
+  productos de origen vegetal y/o animal que no se comercialicen en su estado natural y
+  cuya naturaleza intr&amp;iacute;nseca haya sido modificada total o parcialmente por alg&amp;uacute;n proceso
+de elaboraci&amp;oacute;n o procedimiento industrial.&lt;/p>
+&lt;p align="justify">Se considera que un alimento procesado es de &amp;quot;alto contenido en sodio, az&amp;uacute;car o
+  grasas saturadas&amp;quot;, cuando el mismo sea superior al que determina el Ministerio de
+  Salud del Gobierno de la Ciudad Aut&amp;oacute;noma de Buenos Aires, de conformidad con los
+  par&amp;aacute;metros establecidos por la Organizaci&amp;oacute;n Mundial de la Salud para la franja etaria
+aludida precedentemente.&lt;/p>
+&lt;p align="justify">  &lt;strong>PUBLICIDAD VOLUNTARIA DE PRECIOS DE RECITALES O SHOWS MUSICALES&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 28.-&lt;/strong> En todo anuncio publicitario de venta de localidades para recitales o shows
+  musicales, difundido en medios gr&amp;aacute;ficos que circulen por el &amp;aacute;mbito la Ciudad de
+  Buenos Aires y en toda publicidad de venta de localidades para recitales o shows
+  musicales, que sea difundida en la v&amp;iacute;a p&amp;uacute;blica de la Ciudad Aut&amp;oacute;noma de Buenos
+  Aires, es obligatoria la menci&amp;oacute;n de la raz&amp;oacute;n social y domicilio legal del proveedor o
+  responsable del servicio de venta de localidades y del organizador del evento musical,
+as&amp;iacute; como tambi&amp;eacute;n un n&amp;uacute;mero de tel&amp;eacute;fono.&lt;/p>
+&lt;p align="justify">  La leyenda aludida deber&amp;aacute; ocupar como m&amp;iacute;nimo el dos (2) por ciento de la altura de la
+  pieza publicitaria y deber&amp;aacute; tener un sentido de escritura horizontal, contraste de
+colores equivalente al de la menci&amp;oacute;n del bien ofrecido y tipo de letra f&amp;aacute;cilmente legible.&lt;/p>
+&lt;p align="justify">  En todas las boleter&amp;iacute;as o centros de venta de las localidades citadas, ubicados en la
+  Ciudad Aut&amp;oacute;noma de Buenos Aires, se deber&amp;aacute; colocar en forma destacada y visible un
+cartel que indique lo determinado precedentemente.&lt;/p>
+&lt;p align="justify">  &lt;strong>PUBLICIDAD CON FIGURAS HUMANAS MODIFICADAS DIGITALMENTE&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 29.-&lt;/strong> Toda publicidad est&amp;aacute;tica difundida en v&amp;iacute;a p&amp;uacute;blica, en la cual intervenga una
+  figura humana utilizada como soporte o formando parte del contexto o paisaje que
+  haya sido retocada y/o modificada digitalmente mediante programas inform&amp;aacute;ticos,
+debe exhibir con tipograf&amp;iacute;a y en lugar suficientemente destacado la siguiente leyenda:&lt;/p>
+&lt;blockquote>
+  &lt;p align="justify">&amp;quot;La imagen de la figura humana ha sido retocada y/o modificada digitalmente&amp;quot;.&lt;/p>
+&lt;/blockquote>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 30.-&lt;/strong> El cumplimiento de los requisitos establecidos por la presente ley no eximir&amp;aacute; a
+  sus responsables de las exigencias establecidas por otras normas legales sobre la
+  materia.&lt;/p>
+&lt;p align="justify">  &lt;strong>EXCEPCIONES&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 31.-&lt;/strong> Quedan exceptuadas del cumplimiento de lo dispuesto por el art&amp;iacute;culo 22&amp;deg; de
+  la presente ley las publicidades que particulares realicen mediante avisos clasificados
+  por l&amp;iacute;nea.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 32.-&lt;/strong> Quedan exceptuados del cumplimiento de la presente Ley el comercio de
+  alhajas, antig&amp;uuml;edades, obras de arte y pieles naturales.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 33.-&lt;/strong> Respecto a acciones de Promoci&amp;oacute;n de ventas, rige lo dispuesto en la Ley
+3504&lt;/p>
+&lt;p align="justify">  &lt;strong>SANCIONES&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 34.-&lt;/strong> Verificada la existencia de infracci&amp;oacute;n a la presente
+  ley, quienes la hayan cometido se hacen pasibles de las sanciones previstas en la Ley
+  Nacional de Lealtad Comercial N&amp;deg; 22.802, sus modificatorias y dem&amp;aacute;s disposiciones
+  vigentes, conforme al procedimiento establecido por la Ley 757 de Procedimiento
+  Administrativo para la defensa de los Derechos del Consumidor, con excepci&amp;oacute;n de lo
+establecido en el Art&amp;iacute;culo 15 bis.&lt;/p>
+&lt;p align="justify">&lt;em>&lt;strong>(Conforme texto Art. 2&amp;ordm; de la Ley N&amp;ordm; 5.112, BOCBA N&amp;ordm; 4538 del 09/12/2014) &lt;/strong>&lt;/em>&lt;/p>
+&lt;p align="justify">  &lt;strong>AUTORIDAD DE APLICACI&amp;Oacute;N&lt;/strong>&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 35.-&lt;/strong> La m&amp;aacute;xima autoridad en materia de defensa de los consumidores y usuarios,
+  ser&amp;aacute; la autoridad de aplicaci&amp;oacute;n de la presente Ley.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 36.-&lt;/strong> Der&amp;oacute;ganse las Leyes 1207, 1752, 3437,3632, 3955, 3754, 3960, 4211 y 4592&lt;/p>
+&lt;p align="justify">  &lt;strong>CLAUSULA TRANSITORIA&lt;/strong>&lt;/p>
+&lt;p align="justify">  El procedimiento sancionatorio previsto en el art&amp;iacute;culo 34 se aplica a las infracciones
+  cometidas a partir de la entrada en vigencia de la presente Ley.&lt;/p>
+&lt;p align="justify">  Los procedimientos sancionatorios iniciados con anterioridad se rigen, hasta su
+  finalizaci&amp;oacute;n, por el r&amp;eacute;gimen previsto en la ley respectiva. Las reglamentaciones de las
+leyes indicadas en el art&amp;iacute;culo 36, vigentes a la fecha de sanci&amp;oacute;n de la presente ley, se mantienen en vigor en tanto no sean modificadas o derogadas por la reglamentaci&amp;oacute;n
+que de &amp;eacute;sta se dicte.&lt;/p>
+&lt;p align="justify">  Los dem&amp;aacute;s actos celebrados en virtud de dichas leyes, mantendr&amp;aacute;n su vigencia hasta
+  el efectivo cumplimiento de los plazos acordados.&lt;/p>
+&lt;p align="justify">  &lt;strong>Art&amp;iacute;culo 37.-&lt;/strong> Comun&amp;iacute;quese, etc.&lt;/p>
+&lt;p align="right">CRISTIAN RITONDO &lt;/p>
+&lt;p align="right">CARLOS P&amp;Eacute;REZ  &lt;/p>
+&lt;p>&lt;strong>LEY N&amp;deg; 4.827&lt;/strong>&lt;/p>
+&lt;P>Sanci&amp;oacute;n: 05/12/2013&lt;/P>
+&lt;P>Promulgaci&amp;oacute;n: De Hecho del 10/01/2014&lt;/P>
+&lt;P>Publicaci&amp;oacute;n: BOCBA N&amp;deg; 4337 del 11/02/2014&lt;/P>
+&lt;/font>
+&lt;/BODY>
+&lt;/HTML></text></crawl-data></cache></document></list></query-results>

@@ -1,0 +1,54 @@
+{
+	"BGBAHeader": {
+		"Identificadores": {
+		  "IdMensaje": {
+		    "-schemaId": "HJP",
+		    "#text": "1"
+		  },
+		  "IdMensajeAnterior": {
+		    "-schemaId": "HJP",
+		    "#text": "1"
+		  },
+		  "IdOperacion": {
+		    "-schemaId": "HJP",
+		    "#text": "1"
+		  }
+		},
+		"ModuloAplicativo": {
+		  "IdGalicia": "App-203",
+		  "IdConsumidor": "nlnotes.exe",
+		  "IdProveedor": "ArqCorp"
+		},
+		"Equipo": {
+		  "-ip": "10.1.6.30",
+		  "-nombre": "GAL069018"
+		},
+		"Origen": {
+		  "ModuloAplicativo": {
+		    "IdGalicia": "App-203",
+		    "IdConsumidor": "nlnotes.exe",
+		    "IdProveedor": "ArqCorp"
+		  },
+		  "Canal": "Mod-203",
+		  "OrganizacionInterna": {
+		    "-tipo": "CC",
+		    "-id": "1253"
+		  },
+		  "Equipo": {
+		    "-ip": "10.1.6.30",
+		    "-nombre": "GAL069018"
+		  },
+		  "Terminal": "PLA0800",
+		  "FechaHoraCreacion": "2009-05-31T13:20:00.000-03:00",
+		  "Operador": {
+		    "-schemaId": "LEGAJO",
+		    "#text": "L0151335"
+		  },
+		  "Supervision": "L0151319"
+		}
+	},
+	"Datos": {
+		“TextoConsulta”:”donde esta el cajero mas cercano?”,
+		“idConversacion”: “1ag8302o-838e”
+	}
+}
