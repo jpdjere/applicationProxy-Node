@@ -21,19 +21,23 @@ var config = {};
 
 // config.END_POINT_BUSQUEDAS = "http://sirius.mybluemix.net/ListarBusquedasSugeridas";
 //config.END_POINT_BUSQUEDAS = "http://192.168.1.29:9080/vivisimo/cgi-bin/velocity.exe";
-config.END_POINT_BUSQUEDAS = "http://fde70d0b.ngrok.io/vivisimo/cgi-bin/velocity.exe";
+config.END_POINT_BUSQUEDAS = process.env.WEX_ENDPOINT;
 
 // config.END_POINT_DOCUMENTOS="http://sirius.mybluemix.net/LIstarDocumentos";
 //config.END_POINT_DOCUMENTOS="http://192.168.1.29:9080/vivisimo/cgi-bin/velocity.exe";
-config.END_POINT_DOCUMENTOS="http://fde70d0b.ngrok.io/vivisimo/cgi-bin/velocity.exe";
+config.END_POINT_DOCUMENTOS=process.env.WEX_ENDPOINT;
+
+console.log("WEX_ENDPOINT is:");
+console.log(process.env.WEX_ENDPOINT);
+
 config.sugerencias_dic="dic-general";
 config.sugerencias_user="api-user";
 config.sugerencias_pwd="TH1nk1710";
 config.documentos_user="api-user";
 config.documentos_pwd="TH1nk1710";
 
-var INDEXED_ONTOLECTION_NAME = "iopro-tm-gcba-terms";
-var SEARCH_COLLECTION_NAME = "gcba-metadata";
+var INDEXED_ONTOLECTION_NAME = process.env.INDEXED_ONTOLECTION_NAME;
+var SEARCH_COLLECTION_NAME = process.env.SEARCH_COLLECTION_NAME;
 
 var ontolectionsXML =
 `
@@ -57,7 +61,7 @@ var stopWordsRegexList = /no|si/;
 
 //------------------ DEFINO EL QUERY A HACER Y LA COLECCION A APUNTAR ---------------//
 
-var sources = 'gcba-metadata';
+var sources = SEARCH_COLLECTION_NAME;
 var str = 'tarjeta'; //Para listarBusquedasSugeridas
 
 let listarDocumentos = (message,numDocs) =>{

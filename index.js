@@ -32,8 +32,8 @@ var preguntas = fs.createWriteStream('./preguntas.log');
 
 var wexResult = '';
 
-var confidenceLevel = 0.75;
-var numeroArchivosTraer = 5;
+var confidenceLevel = process.env.CHAT_CONFIDENCE;
+var numeroArchivosTraer = process.env.NUM_DOCS;
 
 
 router.get('/sendData', (req, res) => {
